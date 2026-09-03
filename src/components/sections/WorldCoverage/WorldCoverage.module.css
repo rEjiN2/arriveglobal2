@@ -1,0 +1,170 @@
+.section {
+  background: #0d0e11;
+  padding: 90px 0 70px;
+  overflow: hidden;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.head h2 {
+  font-size: clamp(28px, 3.6vw, 42px);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.head p {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 15px;
+}
+
+/* ── Leaflet map container ── */
+.mapWrap {
+  position: relative;
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mapSkeleton {
+  width: 100%;
+  height: 480px;
+  background: linear-gradient(
+    110deg,
+    #131519 30%,
+    #1a1d24 50%,
+    #131519 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 16px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── City pill list ── */
+.cityList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 36px;
+  padding: 0 40px;
+}
+
+.cityPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.cityPill:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  background: rgba(201, 162, 39, 0.06);
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(201, 162, 39, 0.55);
+  flex-shrink: 0;
+}
+
+.pillDotHQ {
+  background: var(--gold);
+  box-shadow: 0 0 5px rgba(201, 162, 39, 0.7);
+}
+
+.pillName {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+.pillCode {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.06em;
+}
+
+/* ── Stats bar ── */
+.statsBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 52px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 40px;
+}
+
+.stat {
+  text-align: center;
+  padding: 0 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.statNum {
+  font-family: var(--font-space), sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--gold);
+  display: block;
+  letter-spacing: -0.01em;
+}
+
+.statLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  margin-top: 4px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0 50px;
+  }
+
+  .mapWrap {
+    border-radius: 10px;
+  }
+
+  .cityList {
+    padding: 0 16px;
+    gap: 8px;
+  }
+
+  .statsBar {
+    flex-wrap: wrap;
+    gap: 28px;
+    padding-top: 28px;
+  }
+
+  .stat {
+    border-right: none;
+    padding: 0 20px;
+    min-width: 100px;
+  }
+}

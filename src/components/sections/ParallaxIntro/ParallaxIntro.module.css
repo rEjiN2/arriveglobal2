@@ -1,0 +1,210 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(600px, 92vh, 900px);
+  background: #0b0c0e;
+  /* Pull up underneath the sticky header (100px nav) so the image reaches the very
+     top of the viewport and the transparent header floats over it, instead of the
+     header reserving its own blank strip above the hero. */
+  margin-top: -100px;
+}
+
+/* ── Background image ── */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImg {
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 8, 12, 0.82) 0%, rgba(6, 8, 12, 0.55) 34%, rgba(6, 8, 12, 0.2) 58%, rgba(6, 8, 12, 0.05) 78%),
+    linear-gradient(180deg, rgba(6, 8, 12, 0.45) 0%, rgba(6, 8, 12, 0.05) 22%, rgba(6, 8, 12, 0.1) 70%, rgba(6, 8, 12, 0.55) 100%);
+}
+
+/* ── Content ── */
+/* Deliberately not using the shared .wrap class here: .wrap centers itself via
+   margin:auto, and as a flex child that would center the text block within the
+   hero instead of pinning it to the left margin like the reference. */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1220px;
+  padding: 64px 40px 0 72px;
+}
+
+.copy {
+  max-width: 640px;
+}
+
+.reveal {
+  opacity: 0;
+  animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #e8cc6a;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-family: var(--font-space), sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4.6vw, 60px);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  color: #f7f5f0;
+}
+
+.rule {
+  width: 56px;
+  height: 2px;
+  background: #c9a227;
+  margin: 26px 0;
+}
+
+.lede {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(245, 243, 238, 0.78);
+  max-width: 440px;
+  margin-bottom: 36px;
+}
+
+/* ── CTAs ── */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.btnSolid {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #dcb257;
+  color: #14161a;
+  padding: 15px 26px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btnSolid:hover {
+  background: #e8cc6a;
+  transform: translateY(-1px);
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 26px;
+  border: 1px solid rgba(245, 243, 238, 0.5);
+  color: #f5f3ee;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btnOutline:hover {
+  background: rgba(245, 243, 238, 0.1);
+  border-color: #f5f3ee;
+}
+
+/* ── Feature strip ── */
+.features {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.featureIcon {
+  color: #c9a227;
+  flex-shrink: 0;
+}
+
+.feature span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(245, 243, 238, 0.85);
+  line-height: 1.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero {
+    min-height: 100svh;
+    /* mobile nav is 72px */
+    margin-top: -72px;
+  }
+
+  .content {
+    padding: 28px 24px 0;
+  }
+
+  .copy {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .content {
+    padding: 0 16px;
+  }
+
+  .ctaRow {
+    margin-bottom: 40px;
+  }
+
+  .features {
+    gap: 22px 28px;
+  }
+}

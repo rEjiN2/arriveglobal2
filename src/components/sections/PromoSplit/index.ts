@@ -1,0 +1,1 @@
+export { PromoSplit } from './PromoSplit'

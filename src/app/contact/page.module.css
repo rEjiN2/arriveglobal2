@@ -1,0 +1,239 @@
+.page {
+  background: var(--white);
+  color: var(--ink);
+}
+
+/* ─── Compact page header ─────────────────────── */
+.pageHeader {
+  padding: 72px 0 0;
+}
+
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.kicker::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-space), sans-serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--ink-dim);
+  max-width: 560px;
+  margin-bottom: 52px;
+}
+
+.headerDivider {
+  height: 1px;
+  background: var(--line);
+}
+
+/* ─── Form Section ────────────────────────────── */
+.formSection {
+  padding: 72px 0 96px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* Left — info */
+.formLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: sticky;
+  top: 96px;
+}
+
+.infoLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.channel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.15s;
+}
+
+.channel:last-child {
+  border-bottom: none;
+}
+
+.channel:hover {
+  background: var(--cream);
+}
+
+.channelLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.channelValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: color 0.15s;
+}
+
+a.channelValue:hover {
+  color: var(--gold);
+}
+
+.channelNote {
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+
+/* What to expect */
+.whatToExpect {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--cream);
+}
+
+.expectTitle {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 14px;
+}
+
+.expectList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expectList li {
+  font-size: 13.5px;
+  color: var(--ink);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.expectList li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.responseTime {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+.responseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3fd17a;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(63, 209, 122, 0.55);
+}
+
+.responseTime strong {
+  color: var(--ink);
+}
+
+/* Right — form card */
+.formRight {
+  position: relative;
+}
+
+.formCard {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 40px;
+  background: var(--white);
+}
+
+.formCardTitle {
+  font-family: var(--font-space), sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ─── Responsive ──────────────────────────────── */
+@media (max-width: 960px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .formLeft {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .formCard {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+}

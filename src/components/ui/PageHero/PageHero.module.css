@@ -1,0 +1,107 @@
+.hero {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  background: #0c0d10;
+}
+
+.img {
+  object-fit: cover;
+}
+
+/* Multi-stop overlay: dark at top (header merges in), lighter mid, dark again at bottom */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 12, 0.52) 0%,
+    rgba(10, 10, 12, 0.28) 44%,
+    rgba(10, 10, 12, 0.72) 100%
+  );
+}
+
+/* Subtle vignette on left */
+.overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 12, 0.55) 0%,
+    transparent 60%
+  );
+}
+
+/* White fade at the very bottom so hero melts into page bg */
+.fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, transparent 0%, var(--white) 100%);
+  pointer-events: none;
+}
+
+/* Text anchored to bottom-left */
+.content {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.kicker::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-space), sans-serif;
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  max-width: 700px;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: 380px;
+  }
+
+  .content {
+    bottom: 72px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    height: 300px;
+  }
+
+  .content {
+    bottom: 60px;
+  }
+}

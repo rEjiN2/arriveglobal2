@@ -1,0 +1,146 @@
+.wrapper {
+  padding: 0 0 90px;
+  width: 100%;
+  background: #101114;
+}
+
+.kicker {
+  justify-content: center;
+  margin-bottom: 0;
+  padding-top: 44px;
+}
+
+.kicker::before {
+  display: none;
+}
+
+.liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3fd17a;
+  box-shadow: 0 0 0 3px rgba(63, 209, 122, 0.18);
+  flex-shrink: 0;
+  animation: dotPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ── Board ── */
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 24px 0;
+}
+
+.column {
+  position: relative;
+  width: 190px;
+  height: 76px;
+  background: linear-gradient(180deg, #1a1c21 0%, #131519 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 16px 28px -16px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+/* The hinge seam that sells the mechanical flap look */
+.column::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 500px;
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  backface-visibility: hidden;
+  transform-origin: center;
+  opacity: 0;
+  animation: flapReveal 27s ease-in-out infinite;
+}
+
+@keyframes flapReveal {
+  0% { transform: rotateX(88deg); opacity: 0; }
+  3% { transform: rotateX(0deg); opacity: 1; }
+  8% { transform: rotateX(0deg); opacity: 1; }
+  11% { transform: rotateX(-88deg); opacity: 0; }
+  100% { transform: rotateX(-88deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .face {
+    animation: none;
+  }
+
+  .face:first-child {
+    opacity: 1;
+    transform: none;
+  }
+
+  .liveDot {
+    animation: none;
+  }
+}
+
+.faceName {
+  font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.faceCode {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #c9a227;
+}
+
+@media (max-width: 900px) {
+  .board {
+    gap: 12px;
+    padding: 28px 20px 0;
+  }
+
+  .column {
+    width: 150px;
+    height: 68px;
+  }
+
+  .faceName {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .column {
+    width: 44%;
+  }
+}

@@ -1,0 +1,83 @@
+.map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  background: #0d0e11;
+  overflow: hidden;
+}
+
+.mapImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, white 10%, white 90%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, white 10%, white 90%, transparent);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.labelGroup {
+  pointer-events: none;
+}
+
+.labelWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 6px;
+  background: rgba(13, 14, 17, 0.92);
+  color: #f5f3ee;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  white-space: nowrap;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(13, 14, 17, 0.94);
+  color: #f5f3ee;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .tooltip {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .map {
+    aspect-ratio: 2.5 / 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .map {
+    aspect-ratio: 2 / 1;
+  }
+}

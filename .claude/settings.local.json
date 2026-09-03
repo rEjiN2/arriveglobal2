@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --no-install playwright --version)",
+      "Bash(command -v chromium-cli)",
+      "Read(//c/Users/ADMIN/.claude/**)",
+      "Bash(find \"C:/Users/ADMIN/.claude/skills\" -maxdepth 1 -iname \"*chromium*\" 2>/dev/null; find \"C:/Users/ADMIN/AppData/Local/Temp/claude/bundled-skills\" -maxdepth 2 -iname \"*chromium*\" 2>/dev/null)",
+      "Read(//c/Users/ADMIN/AppData/Local/Temp/claude/bundled-skills/**)",
+      "Bash(npm ls *)",
+      "Bash(timeout 20 npx --yes playwright --version)",
+      "Bash(timeout 60 npx --yes playwright install chromium --with-deps)",
+      "Bash(NODE_PATH=\"c:/Users/ADMIN/Desktop/Works/Freelance/ArriveGlobal/Design-2/node_modules\" node -e \"require.resolve\\('playwright'\\)\")",
+      "Bash(npx --yes -p playwright node screenshot-hero.js)",
+      "Read(//c/Users/ADMIN/AppData/Local/npm-cache/_npx/**)",
+      "Read(//c/Users/ADMIN/.npm/**)",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node -e \"console.log\\(require.resolve\\('playwright'\\)\\)\")",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node screenshot-hero.js)",
+      "Bash(timeout 90 npx --yes playwright install chromium)",
+      "Bash(grep -iE \"\\\\.\\(jpg|jpeg|png|webp\\)$\")",
+      "Bash(find \"C:/Users/ADMIN/AppData/Local/Temp\" -maxdepth 3 -newermt \"2026-09-03 20:50\" -iname \"*.png\" -o -maxdepth 3 -newermt \"2026-09-03 20:50\" -iname \"*.jpg\" 2>/dev/null | head -30)",
+      "Read(//c/Users/ADMIN/AppData/Local/Temp/**)",
+      "Bash(grep -viE \"\\\\.log$|\\\\.lock$\")",
+      "Bash(npm view *)",
+      "Bash(pnpm add *)",
+      "Bash(node -e ' *)",
+      "Bash(npx tsc *)",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node screenshot-parallax.js)",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node debug2.js)",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node screenshot-wheel.js)",
+      "Bash(npx eslint *)",
+      "Bash(pnpm lint *)",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node verify-fix.js)",
+      "Bash(grep -iE \"^\\(shield-check|clock|user-check|badge-check\\)\\\\.mjs$\")",
+      "Bash(grep -iE \"^phone\\\\.mjs$\")",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node header-check.js)",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node mobile-final.js)",
+      "Bash(NODE_PATH=\"/c/Users/ADMIN/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node theme-removal-check.js)",
+      "Bash(pnpm remove *)"
+    ]
+  }
+}

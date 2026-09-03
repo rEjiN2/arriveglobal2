@@ -1,0 +1,8 @@
+export { ParallaxIntro } from './ParallaxIntro'
+export { CityStrip } from './CityStrip'
+export { ServiceDirectory } from './ServiceDirectory'
+export { MostBooked } from './MostBooked'
+export { PromoSplit } from './PromoSplit'
+export { QuoteBand } from './QuoteBand'
+export { Newsletter } from './Newsletter'
+export { WorldCoverage } from './WorldCoverage'
