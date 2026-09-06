@@ -1,5 +1,5 @@
 .section {
-  background: #0d0e11;
+  background: #17181b;
   padding: 90px 0 70px;
   overflow: hidden;
 }
@@ -37,9 +37,9 @@
   height: 480px;
   background: linear-gradient(
     110deg,
-    #131519 30%,
-    #1a1d24 50%,
-    #131519 70%
+    #1d1f23 30%,
+    #24272e 50%,
+    #1d1f23 70%
   );
   background-size: 200% 100%;
   animation: shimmer 1.6s ease-in-out infinite;
@@ -51,57 +51,57 @@
   100% { background-position: -200% 0; }
 }
 
-/* ── City pill list ── */
-.cityList {
+/* ── Regions summary row ── */
+.regions {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin-top: 36px;
+  gap: 14px;
+  margin-top: 40px;
   padding: 0 40px;
 }
 
-.cityPill {
+.regionBlock {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
+  gap: 6px;
+  min-width: 150px;
+  padding: 18px 22px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
   transition: border-color 0.2s, background 0.2s;
 }
 
-.cityPill:hover {
+.regionBlock:hover {
   border-color: rgba(201, 162, 39, 0.4);
   background: rgba(201, 162, 39, 0.06);
 }
 
-.pillDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(201, 162, 39, 0.55);
-  flex-shrink: 0;
-}
-
-.pillDotHQ {
-  background: var(--gold);
-  box-shadow: 0 0 5px rgba(201, 162, 39, 0.7);
-}
-
-.pillName {
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
-  white-space: nowrap;
-}
-
-.pillCode {
+.regionTitle {
   font-family: var(--font-mono), monospace;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.35);
-  letter-spacing: 0.06em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+}
+
+.regionCount {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.moreDestinations {
+  text-align: center;
+  margin-top: 18px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
 /* ── Stats bar ── */
@@ -151,9 +151,14 @@
     border-radius: 10px;
   }
 
-  .cityList {
+  .regions {
     padding: 0 16px;
-    gap: 8px;
+    gap: 10px;
+  }
+
+  .regionBlock {
+    min-width: 130px;
+    padding: 14px 18px;
   }
 
   .statsBar {

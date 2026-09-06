@@ -18,8 +18,8 @@ export function ServiceDirectory() {
           <div className="kicker">Built around how you travel</div>
           <h2>Explore our services.</h2>
           <p>
-            From a single airport pickup to a standing corporate account, every trip is fixed-fare
-            and tracked the same way.
+            From the moment you land to the moment you depart, every leg of the journey is
+            handled with precision.
           </p>
         </div>
 

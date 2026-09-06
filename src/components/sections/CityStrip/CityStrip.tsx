@@ -2,10 +2,11 @@ import { CITIES } from '@/lib/constants/cities'
 import styles from './CityStrip.module.css'
 
 const COLUMNS = 6
-const CYCLE_SECONDS = 27
 
 export function CityStrip() {
   const n = CITIES.length
+  // Keep roughly a 3s dwell per city regardless of how many cities are in the list.
+  const CYCLE_SECONDS = n * 3
 
   return (
     <div className={styles.wrapper}>
@@ -25,9 +26,9 @@ export function CityStrip() {
                 const delay = -((slot / n) * CYCLE_SECONDS)
                 return (
                   <div
-                    key={city.code}
+                    key={city.name}
                     className={styles.face}
-                    style={{ animationDelay: `${delay}s` }}
+                    style={{ animationDelay: `${delay}s`, animationDuration: `${CYCLE_SECONDS}s` }}
                   >
                     <span className={styles.faceName}>{city.name}</span>
                     <span className={styles.faceCode}>{city.code}</span>

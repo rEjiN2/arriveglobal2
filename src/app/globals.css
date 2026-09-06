@@ -1,14 +1,14 @@
 /* ─── Full black theme (permanent — no light mode) ─────────────── */
 :root {
-  --white: #0f1013;
-  --surface: #141619;
+  --white: #191a1d;
+  --surface: #1e2023;
   --ink: #f0ebe2;
   --ink-dim: rgba(240, 235, 226, 0.5);
   --accent: #c9a227;
   --accent-tint: rgba(201, 162, 39, 0.12);
   --gold: #c9a227;
   --gold-light: #e8cc6a;
-  --cream: #1a1d22;
+  --cream: #24272c;
   --line: rgba(240, 235, 226, 0.1);
 }
 

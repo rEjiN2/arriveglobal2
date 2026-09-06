@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { IconBrandInstagram, IconBrandFacebook } from '@tabler/icons-react'
 import styles from './Footer.module.css'
+
+const SOCIAL_LINKS = [
+  { label: 'Instagram', href: 'https://www.instagram.com/arrivesglobal/', Icon: IconBrandInstagram },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61594081861634', Icon: IconBrandFacebook },
+]
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -22,11 +28,25 @@ export function Footer() {
               />
             </Link>
             <p className={styles.tagline}>
-              Private chauffeur service operating across<br />
-              9 cities and 4 continents. Discreet,<br />
-              punctual, uncompromising.
+              Beyond Transit · Elite Excursion. Luxury chauffeur services across 400+
+              destinations and six continents, backed by 24/7 concierge support.
             </p>
             <span className={styles.location}>Sharjah, United Arab Emirates</span>
+
+            <div className={styles.social}>
+              {SOCIAL_LINKS.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className={styles.socialLink}
+                >
+                  <Icon size={17} stroke={1.75} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* ── Link groups ── */}
@@ -42,9 +62,9 @@ export function Footer() {
             <div className={styles.col}>
               <p className={styles.colLabel}>Services</p>
               <Link href="/services#airport">Airport Transfers</Link>
-              <Link href="/services#hourly">Hourly Hire</Link>
-              <Link href="/services#corporate">Corporate Account</Link>
-              <Link href="/services#events">Events &amp; Occasions</Link>
+              <Link href="/services#family">Personal &amp; Family Gateway</Link>
+              <Link href="/services#point-to-point">Point to Point Transfers</Link>
+              <Link href="/services#meet-greet">Meet &amp; Greet Services</Link>
             </div>
 
             <div className={styles.col}>

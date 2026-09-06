@@ -1,6 +1,7 @@
 export interface City {
   name: string
   code: string
+  region: 'Middle East' | 'Europe' | 'Asia Pacific' | 'Americas' | 'Africa & Oceania'
   isHQ?: boolean
 }
 
@@ -26,11 +27,10 @@ export interface VehicleCard {
   name: string
   category: string
   description: string
-  price: number
-  unit: string
-  rating: number
   image: string
   featured?: boolean
+  /** HSL triplet (no hsl() wrapper), e.g. "42 55% 32%" — drives the card's tint/glow. */
+  themeColor: string
 }
 
 export interface NewsletterPayload {

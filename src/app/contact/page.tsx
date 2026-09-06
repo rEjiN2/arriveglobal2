@@ -32,26 +32,20 @@ export default function ContactPage() {
   return (
     <div className={styles.page}>
 
-      {/* ── Compact page header ── */}
-      <section className={styles.pageHeader}>
+      {/* ── Hero + form ── */}
+      <section className={styles.hero}>
         <div className="wrap">
-          <p className={styles.kicker}>Get in touch</p>
-          <h1 className={styles.title}>Book a ride or<br />partner with us.</h1>
-          <p className={styles.lead}>
-            Our dispatch team is live 24/7. Send us your trip details and we will
-            confirm a fixed fare within minutes — no back and forth.
-          </p>
-        </div>
-        <div className={styles.headerDivider} />
-      </section>
+          <div className={styles.heroGrid}>
 
-      {/* ── Form + Info ── */}
-      <section className={styles.formSection}>
-        <div className="wrap">
-          <div className={styles.formGrid}>
+            {/* Left — copy + contact info */}
+            <div className={styles.heroLeft}>
+              <p className={styles.kicker}>Get in touch</p>
+              <h1 className={styles.title}>Book a ride or<br />partner with us.</h1>
+              <p className={styles.lead}>
+                Our dispatch team is live 24/7. Send us your trip details and we will
+                confirm a fixed fare within minutes — no back and forth.
+              </p>
 
-            {/* Left — contact info */}
-            <div className={styles.formLeft}>
               <p className={styles.infoLabel}>Reach us directly</p>
 
               <div className={styles.channels}>
@@ -85,7 +79,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right — form */}
-            <div className={styles.formRight}>
+            <div className={styles.heroRight}>
               <div className={styles.formCard}>
                 <p className={styles.formCardTitle}>Send a booking request</p>
                 <ContactForm />

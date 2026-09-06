@@ -1,186 +1,248 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { MapPin, Globe2, Clock } from 'lucide-react'
 import styles from './page.module.css'
+
+const HERO_STATS = [
+  { value: '400+', label: 'Destinations', icon: MapPin },
+  { value: '6', label: 'Continents', icon: Globe2 },
+  { value: '24/7', label: 'Concierge', icon: Clock },
+]
+
+const HERO_IMAGES = [
+  { src: '/executive-suv.jpg', alt: 'Executive SUV' },
+  { src: '/buisness-class.jpg', alt: 'Business class vehicle' },
+  { src: '/luxury-sedan.jpg', alt: 'Luxury sedan' },
+]
+
+const FLEET_EXTRAS = [
+  {
+    id: 'luxury-vans',
+    tag: 'Luxury Vans',
+    category: 'Executive Van · VIP Sprinter',
+    headline: 'Boardroom-grade interiors for VVIP groups and roadshow travel.',
+    image: '/car1.jpg',
+  },
+  {
+    id: 'mini-buses',
+    tag: 'Mini Buses',
+    category: '14-Seater · 22-Seater',
+    headline: 'Comfortable group mobility for delegations, crews, and events.',
+    image: '/about2.jpg',
+  },
+  {
+    id: 'coaches',
+    tag: 'Coaches',
+    category: 'Standard Coach · Luxury Motor Coach',
+    headline: 'Full-size coaches for conferences, large events, and group logistics.',
+    image: '/new-banner1.png',
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'From airport transfers to corporate accounts — every Arrives Global service is fixed-fare and flight-tracked.',
+    'World-class chauffeur service for VVIP clients — airport transfers, personal & family travel, point to point transfers, and meet & greet, across 400+ destinations.',
 }
 
 const SERVICES = [
   {
     id: 'airport',
-    tag: 'Most booked',
-    title: 'Airport Transfers',
-    headline: 'The car is there before you land.',
-    body: [
-      'We track your flight in real time. If your flight is delayed, the pickup moves with it — no calls, no charges, no stress. Your chauffeur monitors the board and adjusts automatically.',
-      'Every airport pickup includes complimentary waiting time, name-board meet-and-greet at arrivals, and help with luggage. Fixed fare agreed at booking. No surprises at the end.',
-    ],
+    tag: 'Airport',
+    title: 'Transfers To & From Airport',
+    headline: 'A stress-free journey, every time you land.',
     image: '/about1.jpg',
-    flip: false,
-    features: ['Flight tracking included', 'Fixed fare — no surcharges', 'Name-board meet & greet', '60 min complimentary wait'],
+    features: ['Live flight tracking', 'Uniformed, professional chauffeurs', '24/7 concierge support', 'All-inclusive, transparent pricing'],
   },
   {
-    id: 'hourly',
-    tag: '2 – 24 hrs',
-    title: 'Hourly Hire',
-    headline: 'A driver on call, for as long as you need.',
-    body: [
-      'Whether you have back-to-back meetings across a city or a full day of appointments, hourly hire puts a vetted chauffeur at your disposal with no meter running between stops.',
-      'Book from two hours to a full day. The vehicle waits while you work. You move when you are ready — not when a driver can get back to you.',
-    ],
+    id: 'family',
+    tag: 'Personal & Family',
+    title: 'Personal & Family Gateway',
+    headline: 'At your disposal, for the trips that matter.',
     image: '/about2.jpg',
-    flip: true,
-    features: ['From 2 hrs, up to 24 hrs', 'Driver waits between stops', 'No extra charge for detours', 'Available in all 9 cities'],
+    features: ['Multilingual chauffeurs', 'Immaculately presented vehicles', 'Flexible, at-your-disposal scheduling', 'Curated luxury fleet'],
   },
   {
-    id: 'corporate',
-    tag: 'Business',
-    title: 'Corporate Accounts',
-    headline: 'One account. Every city your team travels to.',
-    body: [
-      'Centralise your company\'s ground transport under a single account. One invoice per billing cycle, one contact for dispatch, and the same standard of vehicle and driver across all your locations.',
-      'Dashboard access for travel managers, per-department cost codes, and dedicated account support. Designed for companies that move people at scale without sacrificing standards.',
-    ],
+    id: 'point-to-point',
+    tag: 'Point to Point',
+    title: 'Point to Point Transfers',
+    headline: 'One chauffeur, dedicated to your itinerary.',
     image: '/about3.jpg',
-    flip: false,
-    features: ['Consolidated monthly invoicing', 'Per-team cost codes', 'Dedicated account manager', 'Multi-city coverage'],
+    features: ['Dedicated chauffeur for your route', 'Available across 400+ destinations', 'Punctual, precisely timed pickups', 'All-inclusive fixed pricing'],
   },
   {
-    id: 'events',
-    tag: 'Special occasions',
-    title: 'Events & Occasions',
-    headline: 'Arrivals that match the moment.',
-    body: [
-      'Weddings, galas, private dinners, conference transfers — occasions where the journey is part of the experience. We coordinate multi-vehicle logistics so every guest arrives on time and in the right car.',
-      'Full event planning support, vehicle selection from our fleet, and a single point of contact for coordination. No last-minute scrambles. Everything scheduled, confirmed, and tracked.',
-    ],
+    id: 'meet-greet',
+    tag: 'Meet & Greet',
+    title: 'Meet & Greet Services',
+    headline: 'A seamless arrival and departure, every time.',
     image: '/about4.jpg',
-    flip: true,
-    features: ['Multi-vehicle coordination', 'Fleet selection assistance', 'Single contact for all logistics', 'Weddings, galas & conferences'],
+    features: ['On-ground meet & greet team', 'Live flight monitoring', 'VVIP-focused care', '24/7 concierge coordination'],
   },
 ]
 
 const STEPS = [
-  { num: '01', title: 'Request a quote', body: 'Tell us your route, date, and vehicle preference. We respond with a fixed fare — no hidden add-ons.' },
-  { num: '02', title: 'Confirm & relax', body: 'Booking confirmed by email. Your chauffeur is assigned and briefed on your preferences ahead of time.' },
-  { num: '03', title: 'Your driver is ready', body: 'Chauffeur arrives early, tracks your flight if needed, and handles everything from the kerb inward.' },
+  { num: '01', title: 'Tell us your trip', body: 'Share your route, date, and vehicle preference. Our concierge team responds with transparent, all-inclusive pricing.' },
+  { num: '02', title: 'Confirm & relax', body: 'Booking confirmed by our concierge team. Your chauffeur is briefed and assigned ahead of time.' },
+  { num: '03', title: 'Your chauffeur is ready', body: 'A uniformed, professional chauffeur arrives early, tracks your flight if needed, and takes it from there.' },
 ]
 
 export default function ServicesPage() {
   return (
     <div className={styles.page}>
 
-      {/* ── Hero — matches home page layout ── */}
+      {/* ── Hero — collage layout ── */}
       <section className={styles.hero}>
-        <div className={`wrap ${styles.heroGrid}`}>
-
-          {/* Left — text */}
-          <div className={styles.heroLeft}>
-            <p className={styles.heroKicker}>What we offer</p>
-            <h1 className={styles.heroTitle}>
-              Every trip,<br />covered.
-            </h1>
-            <p className={styles.heroLead}>
-              Four service types. One standard across all of them — fixed fares,
-              vetted chauffeurs, and a dispatch team accountable for every ride.
+        <div className={`wrap ${styles.heroInner}`}>
+          <div className={styles.heroCopy}>
+            <p className={`kicker ${styles.reveal}`} style={{ animationDelay: '0.1s' }}>
+              What we offer
             </p>
-            <div className={styles.heroNav}>
-              {SERVICES.map((s) => (
-                <a key={s.id} href={`#${s.id}`} className={styles.heroNavLink}>
-                  {s.title}
-                </a>
+            <h1 className={`${styles.reveal} ${styles.heroTitle}`} style={{ animationDelay: '0.22s' }}>
+              Every leg,<br />handled with<br />precision.
+            </h1>
+            <p className={`${styles.reveal} ${styles.heroLead}`} style={{ animationDelay: '0.36s' }}>
+              From the moment you land to the moment you depart, every leg of the journey is
+              handled with precision.
+            </p>
+
+            <div className={`${styles.reveal} ${styles.heroActions}`} style={{ animationDelay: '0.48s' }}>
+              <Link href="/contact" className={styles.heroActionPrimary}>
+                Request a quote
+              </Link>
+              <Link href="/selection" className={styles.heroActionOutline}>
+                View our fleet
+              </Link>
+            </div>
+
+            <div className={`${styles.reveal} ${styles.heroStatsRow}`} style={{ animationDelay: '0.6s' }}>
+              {HERO_STATS.map(({ value, label, icon: Icon }) => (
+                <div key={label} className={styles.heroStatItem}>
+                  <span className={styles.heroStatIcon}>
+                    <Icon size={18} strokeWidth={1.75} />
+                  </span>
+                  <div>
+                    <p className={styles.heroStatValue}>{value}</p>
+                    <p className={styles.heroStatLabel}>{label}</p>
+                  </div>
+                </div>
               ))}
             </div>
-            <div className={styles.heroStats}>
-              <div className={styles.heroStat}>
-                <b>9+</b>
-                <span>cities covered</span>
-              </div>
-              <div className={styles.heroStat}>
-                <b>4</b>
-                <span>continents</span>
-              </div>
-              <div className={styles.heroStat}>
-                <b>24/7</b>
-                <span>dispatch</span>
-              </div>
-            </div>
           </div>
 
-          {/* Right — image panel */}
-          <div className={styles.heroRight}>
-            <div className={styles.heroPanel}>
-              <Image
-                src="/about1.jpg"
-                alt="Arrives Global airport transfer service"
-                fill
-                className={styles.heroPanelImg}
-                priority
-                sizes="(max-width: 900px) 100vw, 50vw"
-              />
-              <div className={styles.heroPanelOverlay} />
-              <div className={styles.heroPanelBadge}>
-                <span className={styles.heroBadgeDot} />
-                Fixed fares, always
-              </div>
+          <div className={styles.heroCollage}>
+            <span className={`${styles.heroShape} ${styles.heroShapeOne}`} />
+            <span className={`${styles.heroShape} ${styles.heroShapeTwo}`} />
+            <span className={`${styles.heroShape} ${styles.heroShapeThree}`} />
+
+            <div className={`${styles.heroImg} ${styles.heroImgOne}`}>
+              <Image src={HERO_IMAGES[0].src} alt={HERO_IMAGES[0].alt} fill className={styles.heroImgPic} priority sizes="280px" />
+            </div>
+            <div className={`${styles.heroImg} ${styles.heroImgTwo}`}>
+              <Image src={HERO_IMAGES[1].src} alt={HERO_IMAGES[1].alt} fill className={styles.heroImgPic} sizes="240px" />
+            </div>
+            <div className={`${styles.heroImg} ${styles.heroImgThree}`}>
+              <Image src={HERO_IMAGES[2].src} alt={HERO_IMAGES[2].alt} fill className={styles.heroImgPic} sizes="200px" />
             </div>
           </div>
-
         </div>
-        <div className={styles.heroDivider} />
       </section>
 
-      {/* ── Service sections ── */}
-      {SERVICES.map((s) => (
-        <section
-          key={s.id}
-          id={s.id}
-          className={`${styles.service} ${s.flip ? styles.serviceFlip : ''}`}
-        >
-          <div className="wrap">
-            <div className={styles.serviceGrid}>
+      {/* ── Service list — rolling reveal ── */}
+      <section className={styles.rollSection}>
+        <div className="wrap">
+          <p className={styles.rollKicker}>Our services</p>
 
-              <div className={styles.serviceImg}>
-                <div className={styles.servicePanel}>
-                  <Image
-                    src={s.image}
-                    alt={s.title}
-                    fill
-                    className={styles.panelImg}
-                    sizes="(max-width: 900px) 100vw, 50vw"
-                  />
-                  <div className={styles.panelOverlay} />
-                  <span className={styles.panelTag}>{s.tag}</span>
+          <div className={styles.rollList}>
+            {SERVICES.map((s) => (
+              <div key={s.id} id={s.id} className={styles.rollRow}>
+                <div className={styles.rollWrap}>
+                  <div className={styles.rollInner}>
+                    <div className={styles.rollLine}>
+                      <h2 className={styles.rollTitle}>{s.tag}</h2>
+                    </div>
+                    <div className={styles.rollLine}>
+                      <h2 className={`${styles.rollTitle} ${styles.rollTitleHover}`}>{s.tag}</h2>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.serviceText}>
-                <div className="kicker">{s.title}</div>
-                <h2 className={styles.serviceHeadline}>{s.headline}</h2>
-                {s.body.map((p, i) => (
-                  <p key={i} className={styles.serviceBody}>{p}</p>
-                ))}
-                <ul className={styles.featureList}>
+                <span className={styles.rollCategory}>{s.title}</span>
+                <p className={styles.rollHeadline}>{s.headline}</p>
+
+                <ul className={styles.rollFeatures}>
                   {s.features.map((f) => (
-                    <li key={f} className={styles.featureItem}>
-                      <span className={styles.featureDot} />
-                      {f}
-                    </li>
+                    <li key={f}>{f}</li>
                   ))}
                 </ul>
-                <Link href="/contact" className={styles.serviceLink}>
-                  Get a quote →
-                </Link>
-              </div>
 
-            </div>
+                <div className={styles.rollReveal}>
+                  <div className={styles.rollRevealImg}>
+                    <Image src={s.image} alt={s.title} fill className={styles.rollRevealPic} sizes="140px" />
+                    <div className={styles.rollRevealTint} />
+                  </div>
+                  <div className={styles.rollRevealText}>
+                    <p className={styles.rollRevealHeadline}>{s.headline}</p>
+                    <ul className={styles.rollRevealFeatures}>
+                      {s.features.slice(0, 3).map((f) => (
+                        <li key={f}>{f}</li>
+                      ))}
+                    </ul>
+                    <Link href="/contact" className={styles.rollRevealCta}>
+                      Get a quote →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
-      ))}
+        </div>
+      </section>
+
+      {/* ── Group & Event Fleet — extra services ── */}
+      <section className={`${styles.rollSection} ${styles.fleetSection}`}>
+        <div className="wrap">
+          <p className={styles.rollKicker}>The fleet</p>
+          <h2 className={styles.fleetHeading}>Group &amp; Event Fleet</h2>
+          <p className={styles.fleetSub}>
+            From boardroom-grade vans to full-size coaches, built for delegations, crews, and
+            large-scale events.
+          </p>
+
+          <div className={styles.rollList}>
+            {FLEET_EXTRAS.map((f) => (
+              <div key={f.id} id={f.id} className={styles.rollRow}>
+                <div className={styles.rollWrap}>
+                  <div className={styles.rollInner}>
+                    <div className={styles.rollLine}>
+                      <h2 className={styles.rollTitle}>{f.tag}</h2>
+                    </div>
+                    <div className={styles.rollLine}>
+                      <h2 className={`${styles.rollTitle} ${styles.rollTitleHover}`}>{f.tag}</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <span className={styles.rollCategory}>{f.category}</span>
+                <p className={styles.rollHeadline}>{f.headline}</p>
+
+                <div className={styles.rollReveal}>
+                  <div className={styles.rollRevealImg}>
+                    <Image src={f.image} alt={f.tag} fill className={styles.rollRevealPic} sizes="140px" />
+                    <div className={styles.rollRevealTint} />
+                  </div>
+                  <div className={styles.rollRevealText}>
+                    <p className={styles.rollRevealHeadline}>{f.headline}</p>
+                    <Link href="/contact" className={styles.rollRevealCta}>
+                      Get a quote →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── How it works ── */}
       <section className={styles.howItWorks}>
@@ -207,7 +269,7 @@ export default function ServicesPage() {
           <div className={styles.ctaInner}>
             <div>
               <div className="kicker">Ready to book</div>
-              <h2>Get a fixed fare<br />for your next ride.</h2>
+              <h2>Get a quote<br />for your next ride.</h2>
             </div>
             <div className={styles.ctaActions}>
               <Link href="/contact" className={styles.ctaPrimary}>

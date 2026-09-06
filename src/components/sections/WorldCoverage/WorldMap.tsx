@@ -8,7 +8,10 @@ import styles from './WorldMap.module.css'
 interface RoutePoint {
   lat: number
   lng: number
+  /** Persistent floating tag — use sparingly, only for a handful of highlighted hubs. */
   label?: string
+  /** Fallback name shown only in the hover tooltip, for dots without a persistent label. */
+  name?: string
 }
 
 interface WorldMapProps {
@@ -28,7 +31,7 @@ export function WorldMap({ dots = [], lineColor = '#c9a227', animationDuration =
         radius: 0.22,
         color: '#e8cc6a33',
         shape: 'circle',
-        backgroundColor: '#0d0e11',
+        backgroundColor: '#17181b',
       }),
     [map],
   )
@@ -132,12 +135,12 @@ export function WorldMap({ dots = [], lineColor = '#c9a227', animationDuration =
           return (
             <g key={`points-${i}`}>
               {([
-                ['start', startPoint, dot.start.label, 0],
-                ['end', endPoint, dot.end.label, 0.5],
-              ] as const).map(([key, point, label, pulseBegin]) => (
+                ['start', startPoint, dot.start.label, dot.start.name, 0],
+                ['end', endPoint, dot.end.label, dot.end.name, 0.5],
+              ] as const).map(([key, point, label, name, pulseBegin]) => (
                 <g key={key}>
                   <motion.g
-                    onHoverStart={() => setHovered(label ?? null)}
+                    onHoverStart={() => setHovered(label ?? name ?? null)}
                     onHoverEnd={() => setHovered(null)}
                     className={styles.node}
                     whileHover={{ scale: 1.2 }}

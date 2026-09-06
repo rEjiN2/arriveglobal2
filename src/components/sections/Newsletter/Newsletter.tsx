@@ -18,35 +18,54 @@ export function Newsletter() {
 
   return (
     <div className={styles.section}>
-      <div className={`wrap ${styles.inner}`}>
-        <div className={`kicker ${styles.kicker}`}>Stay in the loop</div>
-        <h2 className={styles.heading}>First access to new cities.</h2>
-        <p className={styles.sub}>New routes, seasonal offers, and the occasional travel note. No noise.</p>
+      <div className={`wrap ${styles.split}`}>
+        <div className={styles.copy}>
+          <div className="kicker">Stay in the loop</div>
+          <h2 className={styles.heading}>First access to new cities.</h2>
+          <p className={styles.sub}>New routes, seasonal offers, and the occasional travel note. No noise.</p>
 
-        <form className={styles.form} onSubmit={handleSubmit} noValidate>
-          <input
-            type="email"
-            className={styles.input}
-            placeholder="you@email.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            autoComplete="email"
+          <form className={styles.form} onSubmit={handleSubmit} noValidate>
+            <input
+              type="email"
+              className={styles.input}
+              placeholder="you@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              autoComplete="email"
+            />
+            <button
+              type="submit"
+              className={styles.submitBtn}
+              disabled={status === 'loading'}
+            >
+              {status === 'loading' ? 'Sending…' : 'Notify me'}
+            </button>
+          </form>
+
+          {message && (
+            <p className={cn(styles.message, status === 'success' ? styles.success : styles.error)}>
+              {message}
+            </p>
+          )}
+        </div>
+
+        <div className={styles.collage}>
+          <div
+            className={`${styles.img} ${styles.imgBack}`}
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=800&auto=format&fit=crop')",
+            }}
           />
-          <button
-            type="submit"
-            className={styles.submitBtn}
-            disabled={status === 'loading'}
-          >
-            {status === 'loading' ? 'Sending…' : 'Notify me'}
-          </button>
-        </form>
-
-        {message && (
-          <p className={cn(styles.message, status === 'success' ? styles.success : styles.error)}>
-            {message}
-          </p>
-        )}
+          <div
+            className={`${styles.img} ${styles.imgFront}`}
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop')",
+            }}
+          />
+        </div>
       </div>
     </div>
   )

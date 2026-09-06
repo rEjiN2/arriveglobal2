@@ -1,13 +1,8 @@
+import type { CSSProperties } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { VEHICLES } from '@/lib/constants/vehicles'
 import styles from './MostBooked.module.css'
-
-const StarIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.8 5.5 21l2-7.5L2 9h7z" />
-  </svg>
-)
 
 const ArrowIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -21,18 +16,26 @@ export function MostBooked() {
       <div className="wrap">
         <div className={styles.top}>
           <div>
-            <div className="kicker">Most booked this month</div>
-            <h2>Choose the right<br />way to arrive.</h2>
+            <div className="kicker">The fleet</div>
+            <h2>A class for every<br />occasion.</h2>
           </div>
           <Link href="/selection" className={styles.viewAll}>
-            View all rides <ArrowIcon />
+            View the full fleet <ArrowIcon />
           </Link>
         </div>
 
         <div className={styles.grid}>
-          {VEHICLES.map((vehicle, index) => (
-            <article key={vehicle.slug} className={styles.card}>
-              <div className={styles.imageWrap}>
+          {VEHICLES.map((vehicle) => (
+            <div
+              key={vehicle.slug}
+              className={styles.card}
+              style={{ '--theme-color': vehicle.themeColor } as CSSProperties}
+            >
+              <Link
+                href="/contact"
+                className={styles.cardLink}
+                aria-label={`Enquire about ${vehicle.name}`}
+              >
                 <Image
                   src={vehicle.image}
                   alt={vehicle.name}
@@ -40,26 +43,21 @@ export function MostBooked() {
                   className={styles.image}
                   sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 25vw"
                 />
-                <span className={styles.rank}>{String(index + 1).padStart(2, '0')}</span>
-                {vehicle.featured && <span className={styles.badge}>Top choice</span>}
-              </div>
-              <div className={styles.body}>
-                <div className={styles.meta}>
-                  <span>{vehicle.category}</span>
-                  <span className={styles.rating}><StarIcon /> {vehicle.rating}</span>
-                </div>
-                <h3>{vehicle.name}</h3>
-                <div className={styles.bottom}>
-                  <div className={styles.price}>
-                    <strong>From ${vehicle.price}</strong>
-                    <span>per {vehicle.unit}</span>
-                  </div>
-                  <Link href="/contact" className={styles.bookLink} aria-label={`Book ${vehicle.name}`}>
+
+                <div className={styles.overlay} />
+
+                <div className={styles.body}>
+                  <span className={styles.meta}>{vehicle.category}</span>
+                  <h3>{vehicle.name}</h3>
+                  <p className={styles.desc}>{vehicle.description}</p>
+
+                  <div className={styles.cta}>
+                    <span>Get a quote</span>
                     <ArrowIcon />
-                  </Link>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </Link>
+            </div>
           ))}
         </div>
       </div>

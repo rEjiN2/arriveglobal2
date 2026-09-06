@@ -1,106 +1,73 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
+import { ImageAccordion } from '@/components/ui/ImageAccordion/ImageAccordion'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'The Selection',
+  title: 'Fleet',
   description:
-    'Browse the Arrives Global fleet — Standard Sedan to Business Class. Every vehicle vetted, insured, and fixed-fare.',
+    'A curated range of vehicle classes — Standard Cars, SUV, MPV, and Mini Vans — sourced through our trusted partner network and matched precisely to the occasion.',
 }
 
 const FLEET = [
   {
-    slug: 'standard-sedan',
-    category: 'Everyday standard',
-    name: 'Standard Sedan',
-    tag: 'Most booked',
-    headline: 'Reliable, quiet, always on time.',
+    slug: 'standard-cars',
+    category: 'Business Class · Executive Sedan · First Class Sedan',
+    name: 'Standard Cars',
     body: [
-      'The Standard Sedan is our most-booked class for a reason. Clean, punctual, and professionally driven — ideal for airport transfers, city runs, and solo business travel.',
-      'Every Standard Sedan in our fleet is no older than five years, fully insured, and inspected monthly. The driver arrives early. That is the one thing we never compromise on.',
+      'Discreet, comfortable saloons for daily transfers and business travel.',
     ],
-    specs: [
-      { label: 'Passengers', value: 'Up to 3' },
-      { label: 'Luggage', value: '2 large bags' },
-      { label: 'In-car WiFi', value: 'Included' },
-      { label: 'Climate control', value: 'Full dual-zone' },
-    ],
-    features: ['Flight tracking on airport pickups', 'Fixed fare, booked in advance', 'Name-board meet & greet available', 'Child seat on request'],
+    features: ['Uniformed, professional chauffeur', 'All-inclusive, transparent pricing', 'Live flight tracking on airport routes', 'Complete cleanliness, every journey'],
     image: '/standard-sedan.jpg',
-    flip: false,
-    rating: '4.9',
   },
   {
-    slug: 'executive-suv',
-    category: 'Groups & luggage',
-    name: 'Executive SUV',
-    tag: 'Groups',
-    headline: 'Space for the whole team.',
+    slug: 'suv',
+    category: 'Premium SUV · Luxury SUV · Full-Size Luxury SUV',
+    name: 'SUV',
     body: [
-      'When the party is bigger — or the luggage is — the Executive SUV handles both without compromise. Three rows of seating, extended boot space, and the same fixed fare regardless of how many bags you bring.',
-      'Popular for group airport transfers, corporate team travel, and any journey where the standard sedan simply is not large enough.',
+      'Commanding presence and space, suited to executive and family travel alike.',
     ],
-    specs: [
-      { label: 'Passengers', value: 'Up to 6' },
-      { label: 'Luggage', value: '4 large bags' },
-      { label: 'In-car WiFi', value: 'Included' },
-      { label: 'Extra legroom', value: 'Standard' },
-    ],
-    features: ['Ideal for airport group transfers', 'Extended boot space', 'No surcharge for extra bags', 'Refreshments available on request'],
+    features: ['Multilingual chauffeurs', 'Uniformed, professional presentation', 'All-inclusive, transparent pricing', 'Available across 400+ destinations'],
     image: '/executive-suv.jpg',
-    flip: true,
-    rating: '4.8',
   },
   {
-    slug: 'luxury-sedan',
-    category: 'Flagship class',
-    name: 'Luxury Sedan',
-    tag: 'Premium',
-    headline: 'For the trips that matter most.',
+    slug: 'mpv',
+    category: 'Business MPV · Luxury MPV',
+    name: 'MPV',
     body: [
-      'The Luxury Sedan is reserved for occasions where the journey itself is part of the experience. Premium marques — typically Mercedes S-Class, BMW 7 Series, or equivalent — driven by a senior chauffeur with a minimum of five years on the network.',
-      'Every detail is attended to before you board. The vehicle is presented immaculately. The driver is briefed on your preferences. Nothing is left to chance.',
+      'Generous cabin comfort for small groups travelling together in style.',
     ],
-    specs: [
-      { label: 'Passengers', value: 'Up to 3' },
-      { label: 'Luggage', value: '2 large bags' },
-      { label: 'In-car WiFi', value: 'High-speed' },
-      { label: 'Amenities', value: 'Premium full kit' },
-    ],
-    features: ['Senior chauffeur — 5+ yrs on network', 'Premium marque (S-Class / 7 Series)', 'Complimentary water & refreshments', 'Discretion protocol on request'],
+    features: ['Complete cleanliness, hospital-grade standard', 'Punctual, precisely timed pickups', '24/7 concierge coordination', 'Curated luxury fleet'],
     image: '/luxury-sedan.jpg',
-    flip: false,
-    rating: '4.9',
   },
   {
-    slug: 'business-class',
-    category: 'Regular travel',
-    name: 'Business Class',
-    tag: 'Frequent travellers',
-    headline: 'Everyday comfort, every time.',
+    slug: 'mini-vans',
+    category: 'Standard Mini Van · VIP Mini Van',
+    name: 'Mini Vans',
     body: [
-      'The Business Class sits between the Standard Sedan and Luxury tier — a step up in comfort and amenities without the flagship price point. Suited to frequent corporate travellers and extended airport routes.',
-      'Leather seating, in-car refreshments, and a driver familiar with your preferred route. A strong choice for weekly or biweekly business travel.',
+      'Flexible, well-appointed transport for groups of up to seven.',
     ],
-    specs: [
-      { label: 'Passengers', value: 'Up to 4' },
-      { label: 'Luggage', value: '3 large bags' },
-      { label: 'In-car WiFi', value: 'Included' },
-      { label: 'Leather seating', value: 'Full cabin' },
-    ],
-    features: ['Ideal for frequent weekly travel', 'Leather seating throughout', 'Refreshments & newspaper included', 'Corporate account billing available'],
+    features: ['Uniformed, professional chauffeur', 'All-inclusive, transparent pricing', 'Available across 400+ destinations', 'Punctuality, every time'],
     image: '/buisness-class.jpg',
-    flip: true,
-    rating: '4.8',
   },
 ]
 
-const GUARANTEES = [
-  { num: '01', title: 'Inspected monthly', body: 'Every vehicle undergoes a full mechanical and presentation inspection on a 30-day cycle.' },
-  { num: '02', title: 'No older than 5 years', body: 'Fleet age is capped. No exceptions. You will never ride in an ageing vehicle.' },
-  { num: '03', title: 'Fully licensed & insured', body: 'Every vehicle and driver holds the correct commercial licence and insurance for your journey.' },
-  { num: '04', title: 'Vetted chauffeur every time', body: 'Background checked, service audited, and personally approved before their first booking.' },
+const EVENT_FLEET = [
+  {
+    num: '01',
+    title: 'Luxury Vans',
+    body: 'Executive Van · VIP Sprinter — boardroom-grade interiors for VVIP groups and roadshow travel.',
+  },
+  {
+    num: '02',
+    title: 'Mini Buses',
+    body: '14-seater · 22-seater — comfortable group mobility for delegations, crews, and events.',
+  },
+  {
+    num: '03',
+    title: 'Coaches',
+    body: 'Standard Coach · Luxury Motor Coach — full-size coaches for conferences, large events, and group logistics.',
+  },
 ]
 
 export default function SelectionPage() {
@@ -117,8 +84,8 @@ export default function SelectionPage() {
               Every class.<br />One standard.
             </h1>
             <p className={styles.heroLead}>
-              Four vehicle classes. Every one handpicked, insured, and driven
-              by a vetted chauffeur. Fixed fares agreed before you book.
+              A curated range of vehicle classes sourced through our trusted partner network,
+              matched precisely to the occasion.
             </p>
             <div className={styles.heroLinks}>
               {FLEET.map((v) => (
@@ -129,108 +96,68 @@ export default function SelectionPage() {
             </div>
             <div className={styles.heroStats}>
               <div className={styles.heroStat}><b>4</b><span>vehicle classes</span></div>
-              <div className={styles.heroStat}><b>5yr</b><span>max fleet age</span></div>
-              <div className={styles.heroStat}><b>4.9★</b><span>avg rating</span></div>
+              <div className={styles.heroStat}><b>400+</b><span>destinations</span></div>
+              <div className={styles.heroStat}><b>24/7</b><span>concierge</span></div>
             </div>
           </div>
 
           <div className={styles.heroRight}>
-            <div className={styles.heroPanel}>
-              <Image
-                src="/luxury-sedan.jpg"
-                alt="Arrives Global luxury sedan"
-                fill
-                className={styles.heroPanelImg}
-                priority
-                sizes="(max-width: 900px) 100vw, 50vw"
-              />
-              <div className={styles.heroPanelOverlay} />
-              <div className={styles.heroPanelBadge}>
-                <span className={styles.heroBadgeDot} />
-                4 classes available
-              </div>
-            </div>
+            <ImageAccordion
+              items={FLEET.map((v) => ({ slug: v.slug, title: v.name, image: v.image }))}
+            />
           </div>
 
         </div>
         <div className={styles.heroDivider} />
       </section>
 
-      {/* ── Vehicle detail sections ── */}
-      {FLEET.map((v) => (
-        <section
-          key={v.slug}
-          id={v.slug}
-          className={`${styles.vehicle} ${v.flip ? styles.vehicleFlip : ''}`}
-        >
-          <div className="wrap">
-            <div className={styles.vehicleGrid}>
-
-              <div className={styles.vehicleImgWrap}>
-                <div className={styles.vehiclePanel}>
-                  <Image
-                    src={v.image}
-                    alt={v.name}
-                    fill
-                    className={styles.vehiclePanelImg}
-                    sizes="(max-width: 900px) 100vw, 50vw"
-                  />
-                  <div className={styles.vehiclePanelOverlay} />
-                  <div className={styles.vehicleRating}>
-                    <svg viewBox="0 0 24 24" className={styles.ratingStar}>
-                      <path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.8 5.5 21l2-7.5L2 9h7z" />
-                    </svg>
-                    {v.rating}
-                  </div>
-                  <span className={styles.vehicleTag}>{v.tag}</span>
-                </div>
-              </div>
-
-              <div className={styles.vehicleText}>
-                <div className="kicker">{v.category}</div>
-                <h2 className={styles.vehicleName}>{v.name}</h2>
-                <p className={styles.vehicleHeadline}>{v.headline}</p>
-                {v.body.map((p, i) => (
-                  <p key={i} className={styles.vehicleBody}>{p}</p>
-                ))}
-
-                <div className={styles.specsGrid}>
-                  {v.specs.map((s) => (
-                    <div key={s.label} className={styles.specItem}>
-                      <span className={styles.specLabel}>{s.label}</span>
-                      <span className={styles.specValue}>{s.value}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <ul className={styles.featureList}>
-                  {v.features.map((f) => (
-                    <li key={f} className={styles.featureItem}>
-                      <span className={styles.featureDot} />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link href="/contact" className={styles.vehicleLink}>
-                  Get a quote for this class →
-                </Link>
-              </div>
-
-            </div>
+      {/* ── Vehicle classes — pinned cards ── */}
+      <section className={styles.fleetSection}>
+        <div className="wrap">
+          <div className={styles.fleetHead}>
+            <div className="kicker">Choose your class</div>
+            <h2>Four classes, one standard.</h2>
+            <p>Every class built on the same standard of chauffeur, care, and pricing.</p>
           </div>
-        </section>
-      ))}
 
-      {/* ── Fleet guarantees ── */}
+          <div className={styles.fleetGrid}>
+            {FLEET.map((v, i) => (
+              <Link
+                key={v.slug}
+                id={v.slug}
+                href="/contact"
+                className={`${styles.fleetCard} ${i % 2 === 0 ? styles.fleetTiltLeft : styles.fleetTiltRight}`}
+              >
+                <div className={styles.fleetCardFrame}>
+                  <svg
+                    className={styles.fleetPinIcon}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+                  </svg>
+                  <div className={styles.fleetPanel}>
+                    <span className={styles.fleetNum}>{String(i + 1).padStart(2, '0')}</span>
+                    <h3 className={styles.fleetTitle}>{v.name}</h3>
+                    <p className={styles.fleetDesc}>{v.body[0]}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Group & event fleet ── */}
       <section className={styles.guarantees}>
         <div className="wrap">
           <div className={styles.guaranteesHead}>
-            <div className="kicker">Fleet standards</div>
-            <h2>Every vehicle in our fleet<br />meets the same bar.</h2>
+            <div className="kicker">Group &amp; event fleet</div>
+            <h2>From boardroom-grade vans<br />to full-size coaches.</h2>
           </div>
           <div className={styles.guaranteesGrid}>
-            {GUARANTEES.map((g) => (
+            {EVENT_FLEET.map((g) => (
               <div key={g.num} className={styles.guaranteeCard}>
                 <span className={styles.guaranteeNum}>{g.num}</span>
                 <h3 className={styles.guaranteeTitle}>{g.title}</h3>
@@ -247,7 +174,7 @@ export default function SelectionPage() {
           <div className={styles.ctaInner}>
             <div>
               <div className="kicker">Book your class</div>
-              <h2>Tell us your trip.<br />We quote the fare.</h2>
+              <h2>Tell us your trip.<br />We&rsquo;ll quote you.</h2>
             </div>
             <div className={styles.ctaActions}>
               <Link href="/contact" className={styles.ctaPrimary}>Request a quote</Link>

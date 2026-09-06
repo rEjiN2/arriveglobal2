@@ -1,7 +1,7 @@
 .wrapper {
   padding: 0 0 90px;
   width: 100%;
-  background: #101114;
+  background: #1a1b1e;
 }
 
 .kicker {
@@ -40,9 +40,9 @@
 
 .column {
   position: relative;
-  width: 190px;
+  width: 210px;
   height: 76px;
-  background: linear-gradient(180deg, #1a1c21 0%, #131519 100%);
+  background: linear-gradient(180deg, #24262b 0%, #1d1f23 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   box-shadow: 0 16px 28px -16px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -81,14 +81,17 @@
   backface-visibility: hidden;
   transform-origin: center;
   opacity: 0;
-  animation: flapReveal 27s ease-in-out infinite;
+  animation: flapReveal 165s ease-in-out infinite;
 }
 
+/* Stops are tuned for the current CITIES count (55) so each face holds for
+   ~3s regardless of cycle length: p = k/55 * 100, k = 27/72/99 (from the
+   original 9-city/27s tuning). Recalculate if CITIES.length changes. */
 @keyframes flapReveal {
   0% { transform: rotateX(88deg); opacity: 0; }
-  3% { transform: rotateX(0deg); opacity: 1; }
-  8% { transform: rotateX(0deg); opacity: 1; }
-  11% { transform: rotateX(-88deg); opacity: 0; }
+  0.491% { transform: rotateX(0deg); opacity: 1; }
+  1.309% { transform: rotateX(0deg); opacity: 1; }
+  1.8% { transform: rotateX(-88deg); opacity: 0; }
   100% { transform: rotateX(-88deg); opacity: 0; }
 }
 
@@ -114,6 +117,10 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #fff;
+  max-width: calc(100% - 28px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .faceCode {
@@ -130,7 +137,7 @@
   }
 
   .column {
-    width: 150px;
+    width: 165px;
     height: 68px;
   }
 

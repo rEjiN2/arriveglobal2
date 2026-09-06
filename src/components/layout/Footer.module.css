@@ -1,5 +1,5 @@
 .footer {
-  background: #0f1013;
+  background: #191a1d;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -41,6 +41,29 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.2);
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.socialLink:hover {
+  color: #c9a227;
+  border-color: #c9a227;
+  transform: scale(1.12);
 }
 
 /* ── Link columns ── */

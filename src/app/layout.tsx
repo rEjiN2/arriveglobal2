@@ -39,12 +39,12 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Arrives Global — Private Chauffeur Service',
+    default: 'Arrives Global — Beyond Transit · Elite Excursion',
     template: '%s | Arrives Global',
   },
   description:
-    'Fixed fares, flight-tracked pickups, and a driver already there when you land. Private chauffeur service across 18 cities worldwide.',
-  keywords: ['chauffeur', 'private car service', 'airport transfer', 'luxury transport'],
+    'Luxury chauffeur services worldwide, spanning more than 400 destinations across six continents — VIP meet-and-greet, a curated fleet, and 24/7 concierge support.',
+  keywords: ['chauffeur', 'VVIP travel', 'airport transfer', 'luxury transport', 'meet and greet'],
   icons: {
     icon: [
       { url: '/favicon.ico' },

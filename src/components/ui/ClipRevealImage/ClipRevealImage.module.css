@@ -1,0 +1,57 @@
+.wrap {
+  position: relative;
+  height: 580px;
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 10, 12, 0.45) 100%);
+}
+
+.badge {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 16, 19, 0.95);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.82);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(201, 162, 39, 0.7);
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    height: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .wrap {
+    height: 340px;
+  }
+}

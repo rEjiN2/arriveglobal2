@@ -4,11 +4,10 @@ import { useState } from 'react'
 import styles from './ContactForm.module.css'
 
 const SERVICES = [
-  'Airport Transfer',
-  'Hourly Hire',
-  'City to City',
-  'Corporate Account',
-  'Events & Occasions',
+  'Transfers To & From Airport',
+  'Personal & Family Gateway',
+  'Point to Point Transfers',
+  'Meet & Greet Services',
 ]
 
 type FormState = 'idle' | 'submitting' | 'success'

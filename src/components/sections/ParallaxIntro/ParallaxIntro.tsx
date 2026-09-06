@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CalendarCheck, UserCheck, ShieldCheck, Clock } from 'lucide-react'
+import { CalendarCheck } from 'lucide-react'
+import { IconSteeringWheel, IconShieldCheck, IconClock } from '@tabler/icons-react'
 import styles from './ParallaxIntro.module.css'
 
 const FEATURES = [
-  { icon: UserCheck, label: 'Professional\ndrivers' },
-  { icon: ShieldCheck, label: 'Safe &\nreliable' },
-  { icon: Clock, label: 'Punctual\nevery time.' },
+  { icon: IconSteeringWheel, label: 'Professional\ndrivers' },
+  { icon: IconShieldCheck, label: 'Safe &\nreliable' },
+  { icon: IconClock, label: 'Punctual\nevery time.' },
 ]
 
 export function ParallaxIntro() {
@@ -27,7 +28,7 @@ export function ParallaxIntro() {
       <div className={styles.content}>
         <div className={styles.copy}>
           <p className={`${styles.reveal} ${styles.kicker}`} style={{ animationDelay: '0.1s' }}>
-            Travel in comfort. Arrive in style.
+            Beyond Transit Elite excursion
           </p>
 
           <h1 className={`${styles.reveal} ${styles.heading}`} style={{ animationDelay: '0.22s' }}>
@@ -36,11 +37,9 @@ export function ParallaxIntro() {
             Dedicated to You.
           </h1>
 
-          <div className={`${styles.reveal} ${styles.rule}`} style={{ animationDelay: '0.36s' }} />
-
           <p className={`${styles.reveal} ${styles.lede}`} style={{ animationDelay: '0.42s' }}>
-            Experience premium chauffeur service with professional drivers, luxury vehicles, and
-            unmatched attention to detail.
+            World-class chauffeur service for VVIP clients, vetted professional drivers, a
+            curated luxury fleet, and meticulous care across 400+ destinations worldwide.
           </p>
 
           <div className={`${styles.reveal} ${styles.ctaRow}`} style={{ animationDelay: '0.54s' }}>
@@ -56,7 +55,9 @@ export function ParallaxIntro() {
           <div className={`${styles.reveal} ${styles.features}`} style={{ animationDelay: '0.66s' }}>
             {FEATURES.map(({ icon: Icon, label }) => (
               <div key={label} className={styles.feature}>
-                <Icon size={22} strokeWidth={1.75} className={styles.featureIcon} />
+                <span className={styles.featureBadge}>
+                  <Icon size={20} stroke={1.75} className={styles.featureIcon} />
+                </span>
                 <span>
                   {label.split('\n').map((line, i) => (
                     <span key={i}>
