@@ -16,7 +16,7 @@ const COORDS: Record<string, { lat: number; lng: number }> = {
   // Middle East
   Dubai: { lat: 25.2, lng: 55.27 },
   'Abu Dhabi': { lat: 24.45, lng: 54.38 },
-  Sharjah: { lat: 25.35, lng: 55.42 },
+  UAE: { lat: 25.35, lng: 55.42 },
   Doha: { lat: 25.29, lng: 51.53 },
   Riyadh: { lat: 24.71, lng: 46.68 },
   Jeddah: { lat: 21.54, lng: 39.17 },

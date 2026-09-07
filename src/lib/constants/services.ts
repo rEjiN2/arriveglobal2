@@ -37,13 +37,22 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 4,
-    slug: 'meet-and-greet',
-    title: 'Meet & Greet Services',
+    slug: 'arrival-meet-assist',
+    title: 'Arrival Meet & Assist Services',
     description:
-      'Let us take care of your airport arrival and departure, for a seamless, hassle-free journey every time.',
-    tag: 'Meet & Greet',
-    image:
-      'https://images.pexels.com/photos/8052216/pexels-photo-8052216.jpeg?auto=compress&cs=tinysrgb&w=300',
-    imageAlt: 'Meet and greet services',
+      'A dedicated agent meets you at the gate with a personalized name-board and escorts you through to your vehicle.',
+    tag: 'Arrival',
+    image: '/image9.jpeg',
+    imageAlt: 'Arrival meet and assist services',
+  },
+  {
+    id: 5,
+    slug: 'departure-meet-assist',
+    title: 'Departure Meet & Assist Services',
+    description:
+      'A representative meets you at the terminal and guides you through check-in, security, and to the gate.',
+    tag: 'Departure',
+    image: '/image12.jpeg',
+    imageAlt: 'Departure meet and assist services',
   },
 ]

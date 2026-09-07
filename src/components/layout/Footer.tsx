@@ -31,7 +31,7 @@ export function Footer() {
               Beyond Transit · Elite Excursion. Luxury chauffeur services across 400+
               destinations and six continents, backed by 24/7 concierge support.
             </p>
-            <span className={styles.location}>Sharjah, United Arab Emirates</span>
+            <span className={styles.location}>UAE</span>
 
             <div className={styles.social}>
               {SOCIAL_LINKS.map(({ label, href, Icon }) => (
@@ -64,7 +64,8 @@ export function Footer() {
               <Link href="/services#airport">Airport Transfers</Link>
               <Link href="/services#family">Personal &amp; Family Gateway</Link>
               <Link href="/services#point-to-point">Point to Point Transfers</Link>
-              <Link href="/services#meet-greet">Meet &amp; Greet Services</Link>
+              <Link href="/services#arrival-meet-assist">Arrival Meet &amp; Assist</Link>
+              <Link href="/services#departure-meet-assist">Departure Meet &amp; Assist</Link>
             </div>
 
             <div className={styles.col}>

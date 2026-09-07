@@ -11,9 +11,9 @@ const HERO_STATS = [
 ]
 
 const HERO_IMAGES = [
-  { src: '/executive-suv.jpg', alt: 'Executive SUV' },
-  { src: '/buisness-class.jpg', alt: 'Business class vehicle' },
-  { src: '/luxury-sedan.jpg', alt: 'Luxury sedan' },
+  { src: '/image8.jpeg', alt: 'Luxury chauffeur vehicle' },
+  { src: '/image21.jpg', alt: 'Premium fleet vehicle' },
+  { src: '/bmw-banner.jpg', alt: 'BMW fleet vehicle' },
 ]
 
 const FLEET_EXTRAS = [
@@ -36,14 +36,14 @@ const FLEET_EXTRAS = [
     tag: 'Coaches',
     category: 'Standard Coach · Luxury Motor Coach',
     headline: 'Full-size coaches for conferences, large events, and group logistics.',
-    image: '/new-banner1.png',
+    image: '/image6.jpeg',
   },
 ]
 
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'World-class chauffeur service for VVIP clients — airport transfers, personal & family travel, point to point transfers, and meet & greet, across 400+ destinations.',
+    'World-class chauffeur service for VVIP clients — airport transfers, personal & family travel, point to point transfers, and arrival & departure meet & assist, across 400+ destinations.',
 }
 
 const SERVICES = [
@@ -72,12 +72,32 @@ const SERVICES = [
     features: ['Dedicated chauffeur for your route', 'Available across 400+ destinations', 'Punctual, precisely timed pickups', 'All-inclusive fixed pricing'],
   },
   {
-    id: 'meet-greet',
-    tag: 'Meet & Greet',
-    title: 'Meet & Greet Services',
-    headline: 'A seamless arrival and departure, every time.',
-    image: '/about4.jpg',
-    features: ['On-ground meet & greet team', 'Live flight monitoring', 'VVIP-focused care', '24/7 concierge coordination'],
+    id: 'arrival-meet-assist',
+    tag: 'Arrival',
+    title: 'Arrival Meet & Assist Services',
+    headline: 'A dedicated welcome, from the gate to your vehicle.',
+    image: '/image9.jpeg',
+    features: [
+      'Personalized name-board meet at the gate or arrival bridge',
+      'Fast-tracked VIP immigration & customs clearance',
+      'Baggage porter assistance, where available',
+      'Personal escort to your waiting vehicle or onward transfer',
+      'Optional chauffeur service on request, T&Cs apply',
+    ],
+  },
+  {
+    id: 'departure-meet-assist',
+    tag: 'Departure',
+    title: 'Departure Meet & Assist Services',
+    headline: 'A seamless send-off, from curbside to the gate.',
+    image: '/image12.jpeg',
+    features: [
+      'Optional chauffeur service on request',
+      'Representative meet at the terminal drop-off zone',
+      'Priority check-in escort, porter assistance where available',
+      'Expedited security screening',
+      'Personal gate escort through to boarding, T&Cs apply',
+    ],
   },
 ]
 

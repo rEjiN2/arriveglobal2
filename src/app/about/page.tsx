@@ -110,7 +110,7 @@ export default function AboutPage() {
               </p>
               <div className={`${styles.reveal} ${styles.headerMetaRow}`} style={{ animationDelay: '0.62s' }}>
                 <div className={styles.headerRule} />
-                <p className={styles.headerMeta}>Sharjah, UAE &nbsp;·&nbsp; Global chauffeur &amp; VVIP travel network</p>
+                <p className={styles.headerMeta}>UAE &nbsp;·&nbsp; Global chauffeur &amp; VVIP travel network</p>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
               <h2>Every arrival should feel effortless, secure, and exceptional.</h2>
               <div className={styles.splitBar} />
               <p>
-                Arrives Global FZ LLC is a global chauffeur and VVIP travel company built on a
+                Arrives Global UAE is a global chauffeur and VVIP travel company built on a
                 single principle: that every arrival should feel effortless, secure, and
                 exceptional.
               </p>
@@ -165,7 +165,7 @@ export default function AboutPage() {
             <ClipRevealImage
               src="/about1.jpg"
               alt="Arrives Global chauffeur opening car door"
-              badgeLabel="Sharjah, UAE"
+              badgeLabel="UAE"
             />
           </div>
         </div>

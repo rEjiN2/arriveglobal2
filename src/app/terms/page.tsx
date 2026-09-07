@@ -20,7 +20,7 @@ export default function TermsPage() {
         <header className={styles.header}>
           <div className="kicker">Legal</div>
           <h1>Terms &amp; Conditions</h1>
-          <p className={styles.updated}>Last updated: January 2026</p>
+          <p className={styles.updated}>Last updated: September 2026</p>
         </header>
 
         <article className={styles.body}>
@@ -49,26 +49,55 @@ export default function TermsPage() {
           <section>
             <h2>3. Cancellation Policy</h2>
             <p>
-              Cancellations made more than 24 hours before the scheduled pickup time are
-              eligible for a full refund. Cancellations within 24 hours but more than
-              6 hours prior to pickup will incur a 50% charge. Cancellations within
-              6 hours of the scheduled pickup, or no-shows, will be charged in full.
+              <strong>Standard Policy:</strong> Free cancellations up to 24 hours prior to
+              the scheduled service. Exact conditions depend on your selected location,
+              service type, and vehicle class.
             </p>
-          </section>
-
-          <section>
-            <h2>4. Passenger Conduct</h2>
             <p>
-              Passengers are expected to conduct themselves in a manner that is respectful
-              to the chauffeur and the vehicle. We reserve the right to terminate a journey
-              without refund if a passenger&rsquo;s behaviour is deemed unsafe, abusive, or
-              otherwise unacceptable. Smoking, alcohol consumption, and carrying prohibited
-              substances are strictly forbidden.
+              <strong>Special Events:</strong> Standard cancellation windows may be altered
+              during high-demand event periods.
+            </p>
+            <p>
+              Please always verify the exact terms and conditions attached to the official
+              quote sent by our reservations team before confirming your booking.
             </p>
           </section>
 
           <section>
-            <h2>5. Liability</h2>
+            <h2>4. Chauffeur Details</h2>
+            <p>
+              Chauffeur names and contact information are typically shared 24 hours prior
+              to your service, depending on the location and booking date. Please note that
+              these details are subject to change at short notice, based on operational
+              dispatch adjustments.
+            </p>
+            <p>
+              If you require chauffeur details earlier — for security clearance or peace of
+              mind — we are happy to provide them well in advance upon request.
+            </p>
+          </section>
+
+          <section>
+            <h2>5. Payment to Chauffeurs</h2>
+            <p>
+              Chauffeurs are strictly prohibited from accepting direct payments from clients
+              or guests at any point. All bookings, extensions, and financial transactions
+              must be handled directly through the company.
+            </p>
+            <p>
+              Guests and clients are not permitted to make direct service arrangements with
+              the chauffeur; all scheduling updates must go through our official
+              reservations team.
+            </p>
+            <p>
+              While direct business transactions are strictly prohibited, guests are
+              welcome to offer a voluntary tip to their chauffeur as a gesture of gratitude
+              for excellent service.
+            </p>
+          </section>
+
+          <section>
+            <h2>6. Liability</h2>
             <p>
               Arrives Global carries appropriate professional liability insurance.
               However, we are not liable for loss, damage, or injury arising from
@@ -79,7 +108,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>6. Intellectual Property</h2>
+            <h2>7. Intellectual Property</h2>
             <p>
               All content on the Arrives Global website — including text, graphics, logos,
               and software — is the property of Arrives Global and is protected by applicable
@@ -89,16 +118,16 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>7. Governing Law</h2>
+            <h2>8. Governing Law</h2>
             <p>
               These Terms are governed by the laws of the United Arab Emirates.
               Any disputes arising from these Terms shall be subject to the exclusive
-              jurisdiction of the courts of Sharjah, UAE.
+              jurisdiction of the courts of the UAE.
             </p>
           </section>
 
           <section>
-            <h2>8. Changes to These Terms</h2>
+            <h2>9. Changes to These Terms</h2>
             <p>
               We may update these Terms from time to time. The date at the top of this page
               indicates when they were last revised. Continued use of our services after any
@@ -107,7 +136,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>9. Contact</h2>
+            <h2>10. Contact</h2>
             <p>
               For questions about these Terms, please{' '}
               <Link href="/contact">contact us</Link>.

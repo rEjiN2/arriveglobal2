@@ -53,17 +53,11 @@ export function Newsletter() {
         <div className={styles.collage}>
           <div
             className={`${styles.img} ${styles.imgBack}`}
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=800&auto=format&fit=crop')",
-            }}
+            style={{ backgroundImage: "url('/image8.jpeg')" }}
           />
           <div
             className={`${styles.img} ${styles.imgFront}`}
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop')",
-            }}
+            style={{ backgroundImage: "url('/image8.jpeg')" }}
           />
         </div>
       </div>

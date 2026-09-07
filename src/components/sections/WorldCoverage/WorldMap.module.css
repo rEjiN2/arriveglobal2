@@ -26,10 +26,24 @@
 
 .node {
   cursor: pointer;
+  transition: transform 0.15s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.node:hover {
+  transform: scale(1.2);
 }
 
 .labelGroup {
   pointer-events: none;
+  opacity: 0;
+  animation: agLabelIn 0.5s ease forwards;
+}
+
+@keyframes agLabelIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .labelWrap {
@@ -62,6 +76,12 @@
   font-weight: 600;
   border: 1px solid rgba(201, 162, 39, 0.35);
   display: none;
+  animation: agTooltipIn 0.2s ease;
+}
+
+@keyframes agTooltipIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 700px) {

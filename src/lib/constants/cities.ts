@@ -4,7 +4,7 @@ export const CITIES: City[] = [
   // Middle East
   { name: 'Dubai', code: 'UAE', region: 'Middle East' },
   { name: 'Abu Dhabi', code: 'UAE', region: 'Middle East' },
-  { name: 'Sharjah', code: 'HQ', region: 'Middle East', isHQ: true },
+  { name: 'UAE', code: 'HQ', region: 'Middle East', isHQ: true },
   { name: 'Doha', code: 'QAT', region: 'Middle East' },
   { name: 'Riyadh', code: 'KSA', region: 'Middle East' },
   { name: 'Jeddah', code: 'KSA', region: 'Middle East' },

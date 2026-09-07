@@ -7,7 +7,8 @@ const SERVICES = [
   'Transfers To & From Airport',
   'Personal & Family Gateway',
   'Point to Point Transfers',
-  'Meet & Greet Services',
+  'Arrival Meet & Assist Services',
+  'Departure Meet & Assist Services',
 ]
 
 type FormState = 'idle' | 'submitting' | 'success'
