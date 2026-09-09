@@ -22,21 +22,21 @@ const FLEET_EXTRAS = [
     tag: 'Luxury Vans',
     category: 'Executive Van · VIP Sprinter',
     headline: 'Boardroom-grade interiors for VVIP groups and roadshow travel.',
-    image: '/car1.jpg',
+    image: '/fleet/luxury-mini-van.png',
   },
   {
     id: 'mini-buses',
     tag: 'Mini Buses',
     category: '14-Seater · 22-Seater',
     headline: 'Comfortable group mobility for delegations, crews, and events.',
-    image: '/about2.jpg',
+    image: '/fleet/mini-coach.png',
   },
   {
     id: 'coaches',
     tag: 'Coaches',
     category: 'Standard Coach · Luxury Motor Coach',
     headline: 'Full-size coaches for conferences, large events, and group logistics.',
-    image: '/image6.jpeg',
+    image: '/fleet/luxury-coach.png',
   },
 ]
 
@@ -51,52 +51,50 @@ const SERVICES = [
     id: 'airport',
     tag: 'Airport',
     title: 'Transfers To & From Airport',
-    headline: 'A stress-free journey, every time you land.',
-    image: '/about1.jpg',
-    features: ['Live flight tracking', 'Uniformed, professional chauffeurs', '24/7 concierge support', 'All-inclusive, transparent pricing'],
+    headline: 'Professional chauffeurs, ready and waiting from touchdown.',
+    image: '/about1.webp',
+    description: [
+      'Experience peace of mind knowing you’re in good hands with ARRIVES GLOBAL. Our drivers are highly professional, well dressed, and drive very comfortable and clean cars. You can expect exceptional service from us. Your driver will be waiting for you in the main arrivals hall of the airport, holding a sign with your name.',
+      'Punctuality is essential for us. We send constant notifications to remind you of your reservation and notify you via WhatsApp or email when the driver is arriving at the pick-up point and until you reach your final destination.',
+    ],
   },
   {
-    id: 'family',
-    tag: 'Personal & Family',
-    title: 'Personal & Family Gateway',
-    headline: 'At your disposal, for the trips that matter.',
+    id: 'disposal',
+    tag: 'Disposal',
+    title: 'Disposal Services',
+    headline: 'Your chauffeur and vehicle, entirely at your disposal.',
     image: '/about2.jpg',
-    features: ['Multilingual chauffeurs', 'Immaculately presented vehicles', 'Flexible, at-your-disposal scheduling', 'Curated luxury fleet'],
+    description: [
+      'Experience complete flexibility and personalised luxury with ARRIVES GLOBAL’s Chauffeur Disposal Service. Whether for business engagements, executive meetings, shopping, sightseeing, special occasions, or a full day of personal travel, your dedicated chauffeur and premium vehicle remain exclusively at your disposal throughout your booking.',
+      'Available in Half-Day and Full-Day options, our disposal service allows you to travel entirely on your own schedule, without the need to arrange separate transfers for every destination. Your professional chauffeur will be ready whenever and wherever you need, providing a seamless and effortless journey from one engagement to the next.',
+      'Designed for executives, VIPs, families, and discerning travellers, this service offers the perfect combination of privacy, flexibility, comfort, and convenience. From a carefully planned itinerary to last-minute changes, every journey is handled with discretion and attention to detail.',
+      'Wherever your day takes you, your dedicated chauffeur is ready to take you there—in comfort, style, and complete peace of mind.',
+    ],
   },
   {
     id: 'point-to-point',
     tag: 'Point to Point',
     title: 'Point to Point Transfers',
-    headline: 'One chauffeur, dedicated to your itinerary.',
+    headline: 'One dedicated chauffeur, for your exact itinerary.',
     image: '/about3.jpg',
-    features: ['Dedicated chauffeur for your route', 'Available across 400+ destinations', 'Punctual, precisely timed pickups', 'All-inclusive fixed pricing'],
-  },
-  {
-    id: 'arrival-meet-assist',
-    tag: 'Arrival',
-    title: 'Arrival Meet & Assist Services',
-    headline: 'A dedicated welcome, from the gate to your vehicle.',
-    image: '/image9.jpeg',
-    features: [
-      'Personalized name-board meet at the gate or arrival bridge',
-      'Fast-tracked VIP immigration & customs clearance',
-      'Baggage porter assistance, where available',
-      'Personal escort to your waiting vehicle or onward transfer',
-      'Optional chauffeur service on request, T&Cs apply',
+    description: [
+      'Enjoy a seamless and refined journey from one destination to another with ARRIVES GLOBAL’s Point-to-Point Transfer Service. Whether travelling for business, leisure, an airport transfer, or a special occasion, our professional chauffeurs ensure every journey is smooth, comfortable, and perfectly timed.',
+      'From the moment you are collected until you arrive at your destination, every detail is handled with discretion, precision, and exceptional care. With a premium vehicle and experienced chauffeur at your service, you can relax and enjoy a journey defined by comfort, privacy, and reliability.',
+      'Wherever your journey begins and wherever it takes you, ARRIVES GLOBAL ensures you arrive in comfort, style, and complete peace of mind.',
     ],
   },
   {
-    id: 'departure-meet-assist',
-    tag: 'Departure',
-    title: 'Departure Meet & Assist Services',
-    headline: 'A seamless send-off, from curbside to the gate.',
-    image: '/image12.jpeg',
-    features: [
-      'Optional chauffeur service on request',
-      'Representative meet at the terminal drop-off zone',
-      'Priority check-in escort, porter assistance where available',
-      'Expedited security screening',
-      'Personal gate escort through to boarding, T&Cs apply',
+    id: 'meet-and-assist',
+    tag: 'Meet & Assist',
+    title: 'Meet and Assist Airport',
+    headline: 'A dedicated escort, from arrival to departure.',
+    image: '/image9.jpeg',
+    description: [
+      'Experience a seamless airport journey with ARRIVES GLOBAL’s dedicated Meet & Assist service, designed to provide personalised support from arrival to departure.',
+      'On arrival, you will be welcomed by your dedicated airport escort directly at the tarmac or aerobridge, where available, and personally guided through every stage of the airport journey. From arrival formalities and baggage assistance to your onward transfer, every detail is carefully coordinated for a smooth and effortless experience.',
+      'On departure, your dedicated escort will accompany you through the airport, providing personalised assistance from the moment you arrive until you reach your departure gate or aircraft, where available.',
+      'Designed for VIPs, executives, families, and discerning travellers, our service delivers exceptional comfort, discretion, efficiency, and personalised attention at every stage of your journey.',
+      'From aircraft to destination, and from arrival to departure, we ensure every airport experience is seamless and effortlessly refined.',
     ],
   },
 ]
@@ -190,11 +188,11 @@ export default function ServicesPage() {
                 <span className={styles.rollCategory}>{s.title}</span>
                 <p className={styles.rollHeadline}>{s.headline}</p>
 
-                <ul className={styles.rollFeatures}>
-                  {s.features.map((f) => (
-                    <li key={f}>{f}</li>
+                <div className={styles.rollDescription}>
+                  {s.description.map((p, i) => (
+                    <p key={i}>{p}</p>
                   ))}
-                </ul>
+                </div>
 
                 <div className={styles.rollReveal}>
                   <div className={styles.rollRevealImg}>
@@ -203,11 +201,7 @@ export default function ServicesPage() {
                   </div>
                   <div className={styles.rollRevealText}>
                     <p className={styles.rollRevealHeadline}>{s.headline}</p>
-                    <ul className={styles.rollRevealFeatures}>
-                      {s.features.slice(0, 3).map((f) => (
-                        <li key={f}>{f}</li>
-                      ))}
-                    </ul>
+                    <p className={styles.rollRevealExcerpt}>{s.description[0]}</p>
                     <Link href="/contact" className={styles.rollRevealCta}>
                       Get a quote →
                     </Link>

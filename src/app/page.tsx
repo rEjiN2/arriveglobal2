@@ -6,7 +6,7 @@ import {
   MostBooked,
   WorldCoverage,
   PromoSplit,
-  WhyChooseUs,
+  WhyChooseUsLight,
   QuoteBand,
   Newsletter,
 } from '@/components/sections'
@@ -26,7 +26,7 @@ export default function HomePage() {
       <MostBooked />
       <WorldCoverage />
       <PromoSplit />
-      <WhyChooseUs />
+      <WhyChooseUsLight />
       <QuoteBand
         quote="Beyond Transit. Elite Excursion. This is more than our tagline — it is our approach to every journey we deliver."
         attribution="Arrives Global"

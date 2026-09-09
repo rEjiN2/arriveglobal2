@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { MapContainer, TileLayer, CircleMarker, Tooltip } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
 import styles from './WorldMap.module.css'
 
 interface RoutePoint {
@@ -18,70 +19,51 @@ interface WorldMapProps {
 }
 
 export function WorldMap({ dots = [], lineColor = '#c9a227' }: WorldMapProps) {
-  const [hovered, setHovered] = useState<string | null>(null)
+  if (dots.length === 0) return null
 
-  const projectPoint = (lat: number, lng: number) => {
-    const x = (lng + 180) * (800 / 360)
-    const y = (90 - lat) * (400 / 180)
-    return { x, y }
-  }
+  const hq = dots[0].start
+  const destinations = dots.map((d) => d.end)
 
   return (
     <div className={styles.map}>
-      <img src="/world-dots.svg" className={styles.mapImg} alt="" draggable={false} />
+      <MapContainer
+        center={[hq.lat, hq.lng]}
+        zoom={2}
+        minZoom={1}
+        maxZoom={7}
+        scrollWheelZoom={false}
+        worldCopyJump
+        className={styles.leaflet}
+        attributionControl={false}
+      >
+        <TileLayer
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+          attribution='Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
+        />
 
-      <svg viewBox="0 0 800 400" className={styles.overlay} preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <filter id="ag-glow">
-            <feMorphology operator="dilate" radius="0.5" />
-            <feGaussianBlur stdDeviation="1" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
+        <CircleMarker
+          center={[hq.lat, hq.lng]}
+          radius={7}
+          pathOptions={{ color: lineColor, fillColor: lineColor, fillOpacity: 1, weight: 2 }}
+        >
+          <Tooltip direction="top" offset={[0, -6]} permanent className={styles.leafletTooltip}>
+            {hq.name}
+          </Tooltip>
+        </CircleMarker>
 
-        {dots.map((dot, i) => {
-          const startPoint = projectPoint(dot.start.lat, dot.start.lng)
-          const endPoint = projectPoint(dot.end.lat, dot.end.lng)
-
-          return (
-            <g key={`points-${i}`}>
-              {([
-                ['start', startPoint, dot.start.label, dot.start.name, 0],
-                ['end', endPoint, dot.end.label, dot.end.name, 0.5],
-              ] as const).map(([key, point, label, name, pulseBegin]) => (
-                <g key={key}>
-                  <g
-                    onMouseEnter={() => setHovered(label ?? name ?? null)}
-                    onMouseLeave={() => setHovered(null)}
-                    className={styles.node}
-                  >
-                    <circle cx={point.x} cy={point.y} r="3" fill={lineColor} filter="url(#ag-glow)" />
-                    <circle cx={point.x} cy={point.y} r="3" fill={lineColor} opacity="0.5">
-                      <animate attributeName="r" from="3" to="12" dur="2s" begin={`${pulseBegin}s`} repeatCount="indefinite" />
-                      <animate attributeName="opacity" from="0.6" to="0" dur="2s" begin={`${pulseBegin}s`} repeatCount="indefinite" />
-                    </circle>
-                  </g>
-
-                  {label && (
-                    <g className={styles.labelGroup} style={{ animationDelay: `${0.5 * i + 0.3}s` }}>
-                      <foreignObject x={point.x - 50} y={point.y - 35} width="100" height="30">
-                        <div className={styles.labelWrap}>
-                          <span className={styles.label}>{label}</span>
-                        </div>
-                      </foreignObject>
-                    </g>
-                  )}
-                </g>
-              ))}
-            </g>
-          )
-        })}
-      </svg>
-
-      {hovered && <div className={styles.tooltip}>{hovered}</div>}
+        {destinations.map((point, i) => (
+          <CircleMarker
+            key={i}
+            center={[point.lat, point.lng]}
+            radius={4}
+            pathOptions={{ color: lineColor, fillColor: lineColor, fillOpacity: 0.85, weight: 1 }}
+          >
+            <Tooltip direction="top" offset={[0, -4]} className={styles.leafletTooltip}>
+              {point.label ?? point.name}
+            </Tooltip>
+          </CircleMarker>
+        ))}
+      </MapContainer>
     </div>
   )
 }

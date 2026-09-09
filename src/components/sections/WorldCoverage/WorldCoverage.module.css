@@ -32,75 +32,34 @@
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.mapSkeleton {
+.mapLoading {
   width: 100%;
-  height: 480px;
-  background: linear-gradient(
-    110deg,
-    #1d1f23 30%,
-    #24272e 50%,
-    #1d1f23 70%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.6s ease-in-out infinite;
-  border-radius: 16px;
+  aspect-ratio: 2 / 1;
+  background: #0d0e11;
 }
 
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+@media (min-width: 768px) {
+  .mapLoading {
+    aspect-ratio: 2.5 / 1;
+  }
 }
 
-/* ── Regions summary row ── */
-.regions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 40px;
-  padding: 0 40px;
+@media (min-width: 1024px) {
+  .mapLoading {
+    aspect-ratio: 2 / 1;
+  }
 }
 
-.regionBlock {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  min-width: 150px;
-  padding: 18px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  transition: border-color 0.2s, background 0.2s;
-}
 
-.regionBlock:hover {
-  border-color: rgba(201, 162, 39, 0.4);
-  background: rgba(201, 162, 39, 0.06);
-}
-
-.regionTitle {
-  font-family: var(--font-mono), monospace;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--gold);
+/* ── Tagline ── */
+.tagline {
   text-align: center;
-}
-
-.regionCount {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.moreDestinations {
-  text-align: center;
-  margin-top: 18px;
-  font-family: var(--font-mono), monospace;
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  max-width: 620px;
+  margin: 40px auto 0;
+  font-family: var(--font-space), sans-serif;
+  font-style: italic;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.5;
   color: var(--gold);
 }
 
@@ -149,16 +108,6 @@
 
   .mapWrap {
     border-radius: 10px;
-  }
-
-  .regions {
-    padding: 0 16px;
-    gap: 10px;
-  }
-
-  .regionBlock {
-    min-width: 130px;
-    padding: 14px 18px;
   }
 
   .statsBar {

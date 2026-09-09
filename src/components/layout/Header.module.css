@@ -152,27 +152,6 @@
   transform: scale(0.92);
 }
 
-/* ── Phone badge ── */
-.phoneBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 10px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 6px;
-  color: #f5f3ee;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.phoneBadge:hover {
-  border-color: #c9a227;
-  background: rgba(201, 162, 39, 0.1);
-}
-
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .nav {
@@ -182,10 +161,6 @@
   }
 
   .navList {
-    display: none;
-  }
-
-  .phoneBadge {
     display: none;
   }
 

@@ -25,18 +25,45 @@ export default function TermsPage() {
 
         <article className={styles.body}>
           <section>
-            <h2>1. Introduction</h2>
+            <h2>1. Legal Framework</h2>
             <p>
-              Welcome to Arrives Global (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).
-              These Terms and Conditions govern your use of our private chauffeur services,
-              website, and any related platforms. By booking a service or using our website,
-              you agree to be bound by these terms in full. If you disagree with any part,
-              you must not use our services.
+              In compliance with current regulations, the entity ARRIVES GLOBAL, which operates
+              through the internet from this website www.arrivesglobal.com, details below the
+              general terms and conditions of contracting the products and/or services offered
+              through the same and which generate the rights and obligations of the parties.
             </p>
           </section>
 
           <section>
-            <h2>2. Booking &amp; Reservations</h2>
+            <h2>2. Identification</h2>
+            <p>
+              These General Terms and Conditions of Contract (hereinafter &ldquo;Terms&rdquo;)
+              are intended to regulate the relationship between ARRIVES GLOBAL (hereinafter the
+              &ldquo;Provider&rdquo;) and the customers (hereinafter the &ldquo;User&rdquo;)
+              regarding all transactions carried out through the online store&rsquo;s website.
+            </p>
+          </section>
+
+          <section>
+            <h2>3. The Customer</h2>
+            <p>
+              A customer is understood to be the internet user who acquires this condition by
+              accessing the website, being responsible for the accuracy of the personal data
+              provided to the provider.
+            </p>
+          </section>
+
+          <section>
+            <h2>4. Acceptance</h2>
+            <p>By accepting these Terms, the customer declares:</p>
+            <ul>
+              <li>That they are a person with the capacity to contract according to current regulations.</li>
+              <li>That they have read and accept these Terms.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>5. Booking &amp; Reservations</h2>
             <p>
               All bookings are subject to availability and are confirmed only upon receipt of
               a written or electronic confirmation from Arrives Global. We reserve the right
@@ -47,7 +74,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>3. Cancellation Policy</h2>
+            <h2>6. Cancellation Policy</h2>
             <p>
               <strong>Standard Policy:</strong> Free cancellations up to 24 hours prior to
               the scheduled service. Exact conditions depend on your selected location,
@@ -64,7 +91,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>4. Chauffeur Details</h2>
+            <h2>7. Chauffeur Details</h2>
             <p>
               Chauffeur names and contact information are typically shared 24 hours prior
               to your service, depending on the location and booking date. Please note that
@@ -78,7 +105,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>5. Payment to Chauffeurs</h2>
+            <h2>8. Payment to Chauffeurs</h2>
             <p>
               Chauffeurs are strictly prohibited from accepting direct payments from clients
               or guests at any point. All bookings, extensions, and financial transactions
@@ -97,7 +124,23 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>6. Liability</h2>
+            <h2>9. Purpose of the Contract</h2>
+            <p>
+              This contract aims to regulate the contractual relationship of purchase and sale
+              between the provider and the user at the moment the user accepts the purchase
+              during the online contracting process through the mechanisms set out below. The
+              contractual purchase relationship entails the delivery, in exchange for a
+              determined and publicly displayed price through the website, of one or several
+              specific products. Each of these products may be subject to specific regulations
+              through their particular contracting conditions, which will be detailed in the
+              warranty, returns, withdrawal section, or in the product&rsquo;s technical sheet,
+              due to the different formats in which the products are marketed, their
+              packaging, or their own nature.
+            </p>
+          </section>
+
+          <section>
+            <h2>10. Liability</h2>
             <p>
               Arrives Global carries appropriate professional liability insurance.
               However, we are not liable for loss, damage, or injury arising from
@@ -108,7 +151,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>7. Intellectual Property</h2>
+            <h2>11. Intellectual Property</h2>
             <p>
               All content on the Arrives Global website — including text, graphics, logos,
               and software — is the property of Arrives Global and is protected by applicable
@@ -118,7 +161,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>8. Governing Law</h2>
+            <h2>12. Governing Law</h2>
             <p>
               These Terms are governed by the laws of the United Arab Emirates.
               Any disputes arising from these Terms shall be subject to the exclusive
@@ -127,7 +170,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>9. Changes to These Terms</h2>
+            <h2>13. Changes to These Terms</h2>
             <p>
               We may update these Terms from time to time. The date at the top of this page
               indicates when they were last revised. Continued use of our services after any
@@ -136,7 +179,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>10. Contact</h2>
+            <h2>14. Contact</h2>
             <p>
               For questions about these Terms, please{' '}
               <Link href="/contact">contact us</Link>.

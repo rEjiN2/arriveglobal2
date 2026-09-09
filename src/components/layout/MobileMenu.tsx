@@ -27,7 +27,13 @@ export function MobileMenu() {
       {/* Top bar inside overlay */}
       <div className={styles.panelTop}>
         <Link href="/" onClick={close} className={styles.panelLogo}>
-          <Image src="/logo.svg" alt="Arrives Global" width={96} height={40} />
+          <Image
+            src="/logo.svg"
+            alt="Arrives Global"
+            width={96}
+            height={41}
+            style={{ width: '96px', height: 'auto' }}
+          />
         </Link>
         <div className={styles.panelTopRight}>
           <button

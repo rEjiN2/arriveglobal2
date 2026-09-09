@@ -5,10 +5,9 @@ import styles from './ContactForm.module.css'
 
 const SERVICES = [
   'Transfers To & From Airport',
-  'Personal & Family Gateway',
+  'Disposal Services',
   'Point to Point Transfers',
-  'Arrival Meet & Assist Services',
-  'Departure Meet & Assist Services',
+  'Meet and Assist Airport',
 ]
 
 type FormState = 'idle' | 'submitting' | 'success'

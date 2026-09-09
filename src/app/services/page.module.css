@@ -368,6 +368,20 @@
   flex-shrink: 0;
 }
 
+.rollDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 640px;
+  margin-top: 18px;
+}
+
+.rollDescription p {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--ink-dim);
+}
+
 /* Hover reveal — image + details */
 .rollReveal {
   pointer-events: none;
@@ -378,7 +392,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  width: 380px;
+  width: 420px;
   max-width: 90vw;
   padding: 14px;
   border-radius: 16px;
@@ -445,6 +459,17 @@
 .rollRevealFeatures li {
   font-size: 11px;
   color: var(--ink-dim);
+}
+
+.rollRevealExcerpt {
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .rollRevealCta {
@@ -627,7 +652,8 @@
   }
 
   .rollRevealHeadline,
-  .rollRevealFeatures {
+  .rollRevealFeatures,
+  .rollRevealExcerpt {
     display: none;
   }
 

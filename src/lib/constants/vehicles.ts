@@ -7,7 +7,7 @@ export const VEHICLES: VehicleCard[] = [
     name: 'Standard Cars',
     category: 'Business Class · Executive Sedan · First Class Sedan',
     description: 'Discreet, comfortable saloons for daily transfers and business travel.',
-    image: '/standard-sedan.jpg',
+    image: '/fleet/standard-sedan.png',
     featured: true,
     themeColor: '42 55% 32%',
   },
@@ -17,7 +17,7 @@ export const VEHICLES: VehicleCard[] = [
     name: 'SUV',
     category: 'Premium SUV · Luxury SUV · Full-Size Luxury SUV',
     description: 'Commanding presence and space, suited to executive and family travel alike.',
-    image: '/executive-suv.jpg',
+    image: '/fleet/suv.png',
     themeColor: '212 42% 28%',
   },
   {
@@ -26,7 +26,7 @@ export const VEHICLES: VehicleCard[] = [
     name: 'MPV',
     category: 'Business MPV · Luxury MPV',
     description: 'Generous cabin comfort for small groups travelling together in style.',
-    image: '/luxury-sedan.jpg',
+    image: '/fleet/standard-mpv.png',
     themeColor: '350 40% 28%',
   },
   {
@@ -35,7 +35,7 @@ export const VEHICLES: VehicleCard[] = [
     name: 'Mini Vans',
     category: 'Standard Mini Van · VIP Mini Van',
     description: 'Flexible, well-appointed transport for groups of up to seven.',
-    image: '/buisness-class.jpg',
+    image: '/fleet/luxury-mini-van.png',
     themeColor: '155 38% 24%',
   },
 ]

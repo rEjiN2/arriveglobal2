@@ -103,22 +103,23 @@ export default function AboutPage() {
               <h2>Every arrival should feel effortless, secure, and exceptional.</h2>
               <div className={styles.splitBar} />
               <p>
-                Arrives Global UAE is a global chauffeur and VVIP travel company built on a
-                single principle: that every arrival should feel effortless, secure, and
-                exceptional.
+                Arrives Global UAE is a global chauffeur and VVIP travel company founded on one
+                belief: arriving anywhere in the world should be seamless, safe, and elevated. We
+                don&rsquo;t just move people — we deliver an experience worthy of the moment.
               </p>
               <p>
-                Operating a non-asset network of vetted, professional partners across more than
-                400 destinations, we bring together the world&rsquo;s finest chauffeured
-                vehicles, trained chauffeurs, and on-ground event specialists under one
-                consistent standard of service.
+                Through a non-asset network of carefully vetted, professional partners spanning
+                over 400 destinations worldwide, we bring together premium chauffeured vehicles,
+                highly trained chauffeurs, and experienced on-ground event specialists — all held
+                to one uncompromising standard of service.
               </p>
               <p>
-                We work with discerning individuals, corporate leaders, and event organisers who
-                expect precision at every touchpoint — from the moment a flight lands to the
-                final point of departure. Our role is to remove the friction of travel entirely:
-                coordinating logistics, anticipating needs, and ensuring that comfort, safety, and
-                prestige travel with our clients wherever they go.
+                Our clients include discerning individuals, corporate leaders, and event
+                organisers who expect nothing less than precision at every touchpoint, from
+                touchdown to takeoff. We take the friction out of travel: managing every
+                logistical detail, anticipating needs before they arise, and ensuring that
+                comfort, security, and prestige accompany our clients wherever their journey
+                takes them.
               </p>
               <Link href="/contact" className={styles.splitCta}>
                 Get in touch →
@@ -126,7 +127,7 @@ export default function AboutPage() {
             </div>
 
             <ClipRevealImage
-              src="/about1.jpg"
+              src="/about1.webp"
               alt="Arrives Global chauffeur opening car door"
               badgeLabel="UAE"
             />

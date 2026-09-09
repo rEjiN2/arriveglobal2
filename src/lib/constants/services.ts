@@ -15,11 +15,11 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 2,
-    slug: 'personal-family-gateway',
+    slug: 'disposal-services',
     title: 'Chauffeur Disposal Services',
     description:
       'Enjoy the ultimate flexibility with our Half-Day and Full-Day Disposal Services, designed for both business and personal travel. Your professional chauffeur and premium vehicle remain at your disposal, providing seamless transportation for meetings, appointments, events, shopping, sightseeing, or a personalised itinerary. Travel on your schedule with exceptional comfort, privacy, and convenience wherever your day takes you.',
-    tag: 'Personal & Family',
+    tag: 'Disposal',
     image:
       'https://images.pexels.com/photos/8052210/pexels-photo-8052210.jpeg?auto=compress&cs=tinysrgb&w=300',
     imageAlt: 'Personal and family gateway service',

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Phone, Sun, Moon } from 'lucide-react'
+import { Sun, Moon } from 'lucide-react'
 import { NAV_ITEMS } from '@/lib/constants/navigation'
 import { MobileMenu } from './MobileMenu'
 import { TopBar } from './TopBar'
@@ -64,7 +64,7 @@ export function Header() {
             src="/logo.svg"
             alt="Arrives Global"
             width={140}
-            height={62}
+            height={60}
             priority
             className={styles.logoImg}
           />
@@ -94,12 +94,6 @@ export function Header() {
               {ivory ? <Moon size={16} strokeWidth={2.25} /> : <Sun size={16} strokeWidth={2.25} />}
             </button>
           )}
-
-          {/* Desktop phone badge — hidden on mobile */}
-          <a href="tel:+18000000000" className={styles.phoneBadge}>
-            <Phone size={14} strokeWidth={2.25} />
-            +1 (800) 000-0000
-          </a>
 
           {/* Mobile hamburger + full-screen overlay (portaled to body) */}
           <MobileMenu />

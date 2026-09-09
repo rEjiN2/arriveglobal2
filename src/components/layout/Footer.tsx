@@ -23,7 +23,7 @@ export function Footer() {
                 src="/logo.svg"
                 alt="Arrives Global"
                 width={110}
-                height={52}
+                height={47}
                 className={styles.logoImg}
               />
             </Link>
@@ -62,10 +62,9 @@ export function Footer() {
             <div className={styles.col}>
               <p className={styles.colLabel}>Services</p>
               <Link href="/services#airport">Airport Transfers</Link>
-              <Link href="/services#family">Personal &amp; Family Gateway</Link>
+              <Link href="/services#disposal">Disposal Services</Link>
               <Link href="/services#point-to-point">Point to Point Transfers</Link>
-              <Link href="/services#arrival-meet-assist">Arrival Meet &amp; Assist</Link>
-              <Link href="/services#departure-meet-assist">Departure Meet &amp; Assist</Link>
+              <Link href="/services#meet-and-assist">Meet and Assist Airport</Link>
             </div>
 
             <div className={styles.col}>

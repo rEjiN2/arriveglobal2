@@ -21,8 +21,7 @@ export function ClipRevealImage({
     <motion.div
       className={styles.wrap}
       initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
-      whileInView={{ clipPath: 'polygon(16% 0, 100% 0, 100% 100%, 0% 100%)' }}
-      viewport={{ once: true, margin: '-100px' }}
+      animate={{ clipPath: 'polygon(16% 0, 100% 0, 100% 100%, 0% 100%)' }}
       transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
     >
       <Image src={src} alt={alt} fill className={styles.img} sizes={sizes} />

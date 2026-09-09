@@ -4,6 +4,7 @@ import {
   Hanken_Grotesk,
   Barlow_Condensed,
   JetBrains_Mono,
+  Playfair_Display,
 } from 'next/font/google'
 import { Header, Footer, SmoothScroll } from '@/components/layout'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton/WhatsAppButton'
@@ -37,6 +38,14 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: {
     default: 'Arrives Global — Beyond Transit · Elite Excursion',
@@ -64,12 +73,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} ${hankenGrotesk.variable} ${barlowCondensed.variable} ${jetbrainsMono.variable}`}
+      className={`${spaceGrotesk.variable} ${hankenGrotesk.variable} ${barlowCondensed.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`}
     >
       <head>
         {/* Apply a saved ivory-theme preference before hydration, so returning
             visitors on non-home pages don't see a flash of the dark theme. */}
         <script
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `try {
               if (localStorage.getItem('ag-ivory-theme') === '1' && location.pathname !== '/') {

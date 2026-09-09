@@ -1,12 +1,12 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { CITIES, CITY_REGIONS } from '@/lib/constants/cities'
+import { CITIES } from '@/lib/constants/cities'
 import styles from './WorldCoverage.module.css'
 
 const WorldMap = dynamic(() => import('./WorldMap').then((m) => m.WorldMap), {
   ssr: false,
-  loading: () => <div className={styles.mapSkeleton} aria-busy="true" />,
+  loading: () => <div className={styles.mapLoading} />,
 })
 
 // Approximate coordinates for every city in CITIES — keyed by name so a
@@ -123,18 +123,9 @@ export function WorldCoverage() {
           <WorldMap dots={MAP_ROUTES} />
         </div>
 
-        <div className={styles.regions}>
-          {CITY_REGIONS.map((region) => (
-            <div key={region} className={styles.regionBlock}>
-              <h3 className={styles.regionTitle}>{region}</h3>
-              <span className={styles.regionCount}>
-                {CITIES.filter((city) => city.region === region).length} destinations
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <p className={styles.moreDestinations}>And 400+ additional destinations worldwide</p>
+        <p className={styles.tagline}>
+          &ldquo;Wherever you are. Wherever you want to go. We&rsquo;ll take you there.&rdquo;
+        </p>
 
         <div className={styles.statsBar}>
           {STATS.map((s) => (
