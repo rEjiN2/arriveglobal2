@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ClipRevealImage } from '@/components/ui/ClipRevealImage/ClipRevealImage'
 import { ImageMarquee } from '@/components/ui/ImageMarquee/ImageMarquee'
 import { ScrambleButton } from '@/components/ui/ScrambleButton/ScrambleButton'
+import { WhyChooseUs } from '@/components/sections'
 import styles from './page.module.css'
 
 const FLEET_ROW_1 = [
@@ -31,44 +32,6 @@ const STATS = [
   { value: '24/7', label: 'Concierge & customer support' },
   { value: 'Latest models', label: 'Premium vehicles worldwide' },
   { value: 'Experienced', label: 'Professional chauffeurs' },
-]
-
-const VALUES = [
-  {
-    num: '01',
-    title: '24/7 Customer Care',
-    body: 'A concierge team on call around the clock, wherever your journey takes you.',
-  },
-  {
-    num: '02',
-    title: 'Multilingual Chauffeurs',
-    body: 'Professionals fluent across languages, at ease with every clientele.',
-  },
-  {
-    num: '03',
-    title: 'Complete Cleanliness',
-    body: 'Every vehicle presented to an immaculate, hospital-grade standard.',
-  },
-  {
-    num: '04',
-    title: 'All-Inclusive Pricing',
-    body: 'Transparent rates with no hidden fees — clarity from booking to arrival.',
-  },
-  {
-    num: '05',
-    title: 'Punctuality',
-    body: 'Precise timing, every time — because your schedule is the standard we hold.',
-  },
-  {
-    num: '06',
-    title: 'Flight Tracking',
-    body: 'Live monitoring of arrivals so your chauffeur is always exactly on time.',
-  },
-  {
-    num: '07',
-    title: 'Uniformed Chauffeurs',
-    body: 'Polished, professional presentation befitting every VVIP occasion.',
-  },
 ]
 
 export default function AboutPage() {
@@ -171,40 +134,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Values grid ── */}
-      <section className={styles.values}>
-        <div className="wrap">
-          <div className={styles.valuesHead}>
-            <div className="kicker">The Arrives standard</div>
-            <h2>Why choose us.</h2>
-            <p>Seven commitments that define every journey, wherever in the world it takes place.</p>
-          </div>
-          <div className={styles.valuesGrid}>
-            {VALUES.map((v, i) => (
-              <div
-                key={v.num}
-                className={`${styles.pinCard} ${i % 2 === 0 ? styles.pinTiltLeft : styles.pinTiltRight}`}
-              >
-                <div className={styles.pinCardFrame}>
-                  <svg
-                    className={styles.pinIcon}
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
-                  </svg>
-                  <div className={styles.pinPanel}>
-                    <span className={styles.valueNum}>{v.num}</span>
-                    <h3 className={styles.valueTitle}>{v.title}</h3>
-                    <p className={styles.valueBody}>{v.body}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── Why choose us ── */}
+      <WhyChooseUs />
 
       {/* ── Full-width quote with banner ── */}
       <section className={styles.quoteBreak}>

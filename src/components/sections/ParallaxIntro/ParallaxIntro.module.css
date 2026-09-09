@@ -4,10 +4,10 @@
   align-items: center;
   min-height: clamp(600px, 92vh, 900px);
   background: #15161a;
-  /* Pull up underneath the sticky header (100px nav) so the image reaches the very
-     top of the viewport and the transparent header floats over it, instead of the
-     header reserving its own blank strip above the hero. */
-  margin-top: -100px;
+  /* Pull up underneath the sticky header (100px nav + 40px top bar) so the image
+     reaches the very top of the viewport and the transparent header floats over
+     it, instead of the header reserving its own blank strip above the hero. */
+  margin-top: -140px;
 }
 
 /* ── Background image ── */
@@ -70,21 +70,14 @@
 }
 
 .kicker {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
+  font-family: var(--font-space), sans-serif;
+  font-size: clamp(28px, 3.6vw, 46px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #e8cc6a;
   margin-bottom: 20px;
-}
-
-.heading {
-  font-family: var(--font-space), sans-serif;
-  font-weight: 700;
-  font-size: clamp(36px, 4.6vw, 60px);
-  line-height: 1.16;
-  letter-spacing: -0.01em;
-  color: #f7f5f0;
 }
 
 .lede {
@@ -143,46 +136,6 @@
   border-color: #f5f3ee;
 }
 
-/* ── Feature strip ── */
-.features {
-  display: flex;
-  align-items: flex-start;
-  gap: 36px;
-  flex-wrap: wrap;
-}
-
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.featureBadge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(201, 162, 39, 0.35);
-  background: rgba(201, 162, 39, 0.08);
-}
-
-.featureIcon {
-  color: #c9a227;
-  flex-shrink: 0;
-}
-
-.feature span {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: rgba(245, 243, 238, 0.85);
-  line-height: 1.4;
-}
-
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .hero {
@@ -207,9 +160,5 @@
 
   .ctaRow {
     margin-bottom: 40px;
-  }
-
-  .features {
-    gap: 22px 28px;
   }
 }

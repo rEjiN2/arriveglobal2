@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { Phone, Sun, Moon } from 'lucide-react'
 import { NAV_ITEMS } from '@/lib/constants/navigation'
 import { MobileMenu } from './MobileMenu'
+import { TopBar } from './TopBar'
 import styles from './Header.module.css'
 
 const IVORY_STORAGE_KEY = 'ag-ivory-theme'
@@ -104,6 +105,8 @@ export function Header() {
           <MobileMenu />
         </div>
       </nav>
+
+      <TopBar />
     </header>
   )
 }

@@ -6,7 +6,7 @@ export const SERVICES: ServiceItem[] = [
     slug: 'airport-transfers',
     title: 'Transfers To & From Airport',
     description:
-      'Our professional service ensures a stress-free journey to the airport or to your preferred destination.',
+      'Our professional chauffeurs ensure an effortless and refined journey to the airport, where every detail is handled with the utmost care. Book your transfer today and travel in exceptional comfort, confidence, and complete peace of mind.',
     tag: 'Airport',
     featured: true,
     image:
@@ -16,9 +16,9 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 2,
     slug: 'personal-family-gateway',
-    title: 'Personal & Family Gateway',
+    title: 'Chauffeur Disposal Services',
     description:
-      'At-your-disposal services for family getaways or business trips, delivering a comfortable, unforgettable experience.',
+      'Enjoy the ultimate flexibility with our Half-Day and Full-Day Disposal Services, designed for both business and personal travel. Your professional chauffeur and premium vehicle remain at your disposal, providing seamless transportation for meetings, appointments, events, shopping, sightseeing, or a personalised itinerary. Travel on your schedule with exceptional comfort, privacy, and convenience wherever your day takes you.',
     tag: 'Personal & Family',
     image:
       'https://images.pexels.com/photos/8052210/pexels-photo-8052210.jpeg?auto=compress&cs=tinysrgb&w=300',
@@ -29,30 +29,19 @@ export const SERVICES: ServiceItem[] = [
     slug: 'point-to-point-transfers',
     title: 'Point to Point Transfers',
     description:
-      'Travel safely and comfortably from one destination to another, with a chauffeur dedicated to your itinerary.',
+      'Experience a journey defined by elegance, comfort, and discretion with our premium point-to-point transfers. From the moment you depart to your final destination, our professional multilingual chauffeurs deliver a seamless travel experience tailored to the highest standards of luxury and service.',
     tag: 'Point to Point',
-    image:
-      'https://images.pexels.com/photos/16705973/pexels-photo-16705973.jpeg?auto=compress&cs=tinysrgb&w=300',
-    imageAlt: 'Point to point transfers',
+    image: '/banner4.jpg',
+    imageAlt: 'Chauffeur with a car, point to point transfers',
   },
   {
     id: 4,
-    slug: 'arrival-meet-assist',
-    title: 'Arrival Meet & Assist Services',
+    slug: 'airport-meet-assist',
+    title: 'Airport Meet and Assist Services',
     description:
-      'A dedicated agent meets you at the gate with a personalized name-board and escorts you through to your vehicle.',
-    tag: 'Arrival',
-    image: '/image9.jpeg',
-    imageAlt: 'Arrival meet and assist services',
-  },
-  {
-    id: 5,
-    slug: 'departure-meet-assist',
-    title: 'Departure Meet & Assist Services',
-    description:
-      'A representative meets you at the terminal and guides you through check-in, security, and to the gate.',
-    tag: 'Departure',
-    image: '/image12.jpeg',
-    imageAlt: 'Departure meet and assist services',
+      'Experience a seamless airport journey with our dedicated Meet and Greet service. From the moment you step off the aircraft whether on the tarmac or at the aerobridge, your personal airport escort will be by your side, providing discreet, personalized assistance and guiding you effortlessly through every stage of your arrival or departure.',
+    tag: 'Meet & Assist',
+    image: '/image3.jpeg',
+    imageAlt: 'Airport meet and assist services',
   },
 ]
