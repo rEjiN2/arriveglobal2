@@ -29,11 +29,11 @@ export function PromoSplit() {
             Elite excursion.
           </h2>
           <p>
-            Arrives Global is a global chauffeur and VVIP travel company built on a single
+            ARRIVES GLOBAL is a global chauffeur and VVIP travel company built on a single
             principle: that every arrival should feel effortless, secure, and exceptional.
             Operating a non-asset network of vetted, professional partners, we bring together the
             world&apos;s finest chauffeured vehicles, trained chauffeurs, and on-ground event
-            specialists across more than <b>400 destinations</b> — under one consistent standard
+            specialists across more than <b>400 destinations</b>, under one consistent standard
             of service.
           </p>
           <div className={styles.links}>

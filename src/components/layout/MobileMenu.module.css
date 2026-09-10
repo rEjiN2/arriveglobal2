@@ -161,6 +161,22 @@
   color: var(--gold);
 }
 
+/* ── Active page ── */
+.panelLinkActive {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.panelLinkActive .linkNum {
+  opacity: 1;
+}
+
+.panelLinkActive .linkArrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--gold);
+}
+
 .linkNum {
   font-family: var(--font-mono), monospace;
   font-size: 11px;

@@ -126,6 +126,15 @@
   transform: scaleX(1);
 }
 
+/* ── Active page ── */
+.navLinkActive {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.navLinkActive::after {
+  transform: scaleX(1);
+}
+
 /* ── Ivory theme toggle ── */
 .themeToggle {
   display: inline-flex;

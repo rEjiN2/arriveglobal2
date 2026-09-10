@@ -1,20 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Globe2, Clock } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import styles from './page.module.css'
-
-const HERO_STATS = [
-  { value: '400+', label: 'Destinations', icon: MapPin },
-  { value: '6', label: 'Continents', icon: Globe2 },
-  { value: '24/7', label: 'Concierge', icon: Clock },
-]
-
-const HERO_IMAGES = [
-  { src: '/image8.jpeg', alt: 'Luxury chauffeur vehicle' },
-  { src: '/image21.jpg', alt: 'Premium fleet vehicle' },
-  { src: '/bmw-banner.jpg', alt: 'BMW fleet vehicle' },
-]
 
 const FLEET_EXTRAS = [
   {
@@ -43,7 +31,7 @@ const FLEET_EXTRAS = [
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'World-class chauffeur service for VVIP clients — airport transfers, personal & family travel, point to point transfers, and arrival & departure meet & assist, across 400+ destinations.',
+    'World-class chauffeur service for VVIP clients: airport transfers, personal & family travel, point to point transfers, and arrival & departure meet & assist, across 400+ destinations.',
 }
 
 const SERVICES = [
@@ -68,7 +56,7 @@ const SERVICES = [
       'Experience complete flexibility and personalised luxury with ARRIVES GLOBAL’s Chauffeur Disposal Service. Whether for business engagements, executive meetings, shopping, sightseeing, special occasions, or a full day of personal travel, your dedicated chauffeur and premium vehicle remain exclusively at your disposal throughout your booking.',
       'Available in Half-Day and Full-Day options, our disposal service allows you to travel entirely on your own schedule, without the need to arrange separate transfers for every destination. Your professional chauffeur will be ready whenever and wherever you need, providing a seamless and effortless journey from one engagement to the next.',
       'Designed for executives, VIPs, families, and discerning travellers, this service offers the perfect combination of privacy, flexibility, comfort, and convenience. From a carefully planned itinerary to last-minute changes, every journey is handled with discretion and attention to detail.',
-      'Wherever your day takes you, your dedicated chauffeur is ready to take you there—in comfort, style, and complete peace of mind.',
+      'Wherever your day takes you, your dedicated chauffeur is ready to take you there, in comfort, style, and complete peace of mind.',
     ],
   },
   {
@@ -109,58 +97,64 @@ export default function ServicesPage() {
   return (
     <div className={styles.page}>
 
-      {/* ── Hero — collage layout ── */}
+      {/* ── Hero — full-bleed cinematic image ── */}
       <section className={styles.hero}>
-        <div className={`wrap ${styles.heroInner}`}>
+        <div className={styles.heroBg}>
+          <Image
+            src="/service-banner.png"
+            alt="Arrives Global chauffeur vehicle, ARRIVES GLOBAL license plate, Dubai"
+            fill
+            priority
+            className={styles.heroBgPic}
+            sizes="100vw"
+          />
+          <div className={styles.heroBgOverlay} />
+        </div>
+
+        <svg
+          className={styles.heroCurve}
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="heroCurveGrad" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stopColor="#D6AA45" stopOpacity="0" />
+              <stop offset="55%" stopColor="#E8C76A" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#D6AA45" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 15 78 C 24 72, 32 66, 40 58"
+            stroke="url(#heroCurveGrad)"
+            strokeWidth="1.5"
+            fill="none"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+
+        <div className={styles.heroContent}>
           <div className={styles.heroCopy}>
-            <p className={`kicker ${styles.reveal}`} style={{ animationDelay: '0.1s' }}>
-              What we offer
+            <p className={`${styles.reveal} ${styles.heroKicker}`} style={{ animationDelay: '0.1s' }}>
+              Our services
+              <span className={styles.heroKickerLine} />
             </p>
             <h1 className={`${styles.reveal} ${styles.heroTitle}`} style={{ animationDelay: '0.22s' }}>
-              Every leg,<br />handled with<br />precision.
+              Premium Car Services<br />
+              <span className={styles.heroTitleGold}>for Every Journey</span>
             </h1>
             <p className={`${styles.reveal} ${styles.heroLead}`} style={{ animationDelay: '0.36s' }}>
-              From the moment you land to the moment you depart, every leg of the journey is
-              handled with precision.
+              From luxury rentals to professional chauffeur services, we deliver comfort, safety
+              and excellence, every time.
             </p>
 
             <div className={`${styles.reveal} ${styles.heroActions}`} style={{ animationDelay: '0.48s' }}>
               <Link href="/contact" className={styles.heroActionPrimary}>
-                Request a quote
+                Request a Quote <ArrowRight size={16} strokeWidth={2} />
               </Link>
               <Link href="/selection" className={styles.heroActionOutline}>
-                View our fleet
+                View Our Fleet <ArrowRight size={16} strokeWidth={2} />
               </Link>
-            </div>
-
-            <div className={`${styles.reveal} ${styles.heroStatsRow}`} style={{ animationDelay: '0.6s' }}>
-              {HERO_STATS.map(({ value, label, icon: Icon }) => (
-                <div key={label} className={styles.heroStatItem}>
-                  <span className={styles.heroStatIcon}>
-                    <Icon size={18} strokeWidth={1.75} />
-                  </span>
-                  <div>
-                    <p className={styles.heroStatValue}>{value}</p>
-                    <p className={styles.heroStatLabel}>{label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.heroCollage}>
-            <span className={`${styles.heroShape} ${styles.heroShapeOne}`} />
-            <span className={`${styles.heroShape} ${styles.heroShapeTwo}`} />
-            <span className={`${styles.heroShape} ${styles.heroShapeThree}`} />
-
-            <div className={`${styles.heroImg} ${styles.heroImgOne}`}>
-              <Image src={HERO_IMAGES[0].src} alt={HERO_IMAGES[0].alt} fill className={styles.heroImgPic} priority sizes="280px" />
-            </div>
-            <div className={`${styles.heroImg} ${styles.heroImgTwo}`}>
-              <Image src={HERO_IMAGES[1].src} alt={HERO_IMAGES[1].alt} fill className={styles.heroImgPic} sizes="240px" />
-            </div>
-            <div className={`${styles.heroImg} ${styles.heroImgThree}`}>
-              <Image src={HERO_IMAGES[2].src} alt={HERO_IMAGES[2].alt} fill className={styles.heroImgPic} sizes="200px" />
             </div>
           </div>
         </div>
@@ -177,10 +171,10 @@ export default function ServicesPage() {
                 <div className={styles.rollWrap}>
                   <div className={styles.rollInner}>
                     <div className={styles.rollLine}>
-                      <h2 className={styles.rollTitle}>{s.tag}</h2>
+                      <h2 className={styles.rollTitle}>{s.title}</h2>
                     </div>
                     <div className={styles.rollLine}>
-                      <h2 className={`${styles.rollTitle} ${styles.rollTitleHover}`}>{s.tag}</h2>
+                      <h2 className={`${styles.rollTitle} ${styles.rollTitleHover}`}>{s.title}</h2>
                     </div>
                   </div>
                 </div>

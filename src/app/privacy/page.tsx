@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Arrives Global',
+  title: 'Privacy Policy: Arrives Global',
   description: 'How Arrives Global collects, uses, and protects your personal information.',
 }
 
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
           <section>
             <h2>1. Overview</h2>
             <p>
-              Arrives Global (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;)
+              ARRIVES GLOBAL (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;)
               is committed to protecting your privacy. This Privacy Policy explains how we
               collect, use, disclose, and safeguard your personal information when you use
               our services or visit our website.
@@ -74,8 +74,8 @@ export default function PrivacyPage() {
             <h2>4. Sharing Your Information</h2>
             <p>
               We do not sell your personal data. We may share it with trusted third parties
-              solely to deliver our services — for example, chauffeurs, payment processors,
-              and analytics providers — all of whom are contractually bound to handle your
+              solely to deliver our services, for example, chauffeurs, payment processors,
+              and analytics providers, all of whom are contractually bound to handle your
               data securely and in accordance with applicable law.
             </p>
           </section>

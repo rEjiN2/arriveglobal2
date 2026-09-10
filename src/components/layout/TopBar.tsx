@@ -37,9 +37,9 @@ export function TopBar() {
           +1 (800) 000-0000
         </a>
 
-        <a href="mailto:reservation@arrivesglobal.com" className={styles.link}>
+        <a href="mailto:reservations@arrivesglobal.com" className={styles.link}>
           <Mail size={13} strokeWidth={2.25} />
-          reservation@arrivesglobal.com
+          reservations@arrivesglobal.com
         </a>
       </div>
     </div>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions — Arrives Global',
+  title: 'Terms & Conditions: Arrives Global',
   description: 'Terms and conditions for using Arrives Global private chauffeur services.',
 }
 
@@ -66,7 +66,7 @@ export default function TermsPage() {
             <h2>5. Booking &amp; Reservations</h2>
             <p>
               All bookings are subject to availability and are confirmed only upon receipt of
-              a written or electronic confirmation from Arrives Global. We reserve the right
+              a written or electronic confirmation from ARRIVES GLOBAL. We reserve the right
               to refuse or cancel any booking at our sole discretion. Fare estimates provided
               at the time of booking are fixed unless the journey materially deviates from the
               agreed itinerary.
@@ -99,8 +99,8 @@ export default function TermsPage() {
               dispatch adjustments.
             </p>
             <p>
-              If you require chauffeur details earlier — for security clearance or peace of
-              mind — we are happy to provide them well in advance upon request.
+              If you require chauffeur details earlier, for security clearance or peace of
+              mind, we are happy to provide them well in advance upon request.
             </p>
           </section>
 
@@ -142,7 +142,7 @@ export default function TermsPage() {
           <section>
             <h2>10. Liability</h2>
             <p>
-              Arrives Global carries appropriate professional liability insurance.
+              ARRIVES GLOBAL carries appropriate professional liability insurance.
               However, we are not liable for loss, damage, or injury arising from
               circumstances beyond our reasonable control, including but not limited to
               traffic delays, severe weather, or acts of third parties. Passengers&rsquo;
@@ -153,8 +153,8 @@ export default function TermsPage() {
           <section>
             <h2>11. Intellectual Property</h2>
             <p>
-              All content on the Arrives Global website — including text, graphics, logos,
-              and software — is the property of Arrives Global and is protected by applicable
+              All content on the ARRIVES GLOBAL website, including text, graphics, logos,
+              and software, is the property of ARRIVES GLOBAL and is protected by applicable
               intellectual property laws. You may not reproduce, distribute, or create
               derivative works without our express written consent.
             </p>

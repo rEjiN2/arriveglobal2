@@ -17,7 +17,7 @@ const CHANNELS = [
   {
     label: 'WhatsApp',
     value: '+1 (800) 000-0000',
-    note: 'Fastest response — live dispatch',
+    note: 'Fastest response, live dispatch',
     href: 'https://wa.me/18000000000',
   },
   {
@@ -43,7 +43,7 @@ export default function ContactPage() {
               <h1 className={styles.title}>Book a ride or<br />partner with us.</h1>
               <p className={styles.lead}>
                 Our dispatch team is live 24/7. Send us your trip details and we will
-                confirm a fixed fare within minutes — no back and forth.
+                confirm a fixed fare within minutes, no back and forth.
               </p>
 
               <p className={styles.infoLabel}>Reach us directly</p>
@@ -67,7 +67,7 @@ export default function ContactPage() {
                 <ul className={styles.expectList}>
                   <li>We review your trip details</li>
                   <li>We send you a fixed fare quote</li>
-                  <li>You confirm — no payment until booking is locked</li>
+                  <li>You confirm, no payment until booking is locked</li>
                   <li>Your chauffeur is assigned and briefed</li>
                 </ul>
               </div>

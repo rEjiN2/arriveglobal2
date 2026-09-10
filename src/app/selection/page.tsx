@@ -24,7 +24,7 @@ import styles from './page.module.css'
 export const metadata: Metadata = {
   title: 'Fleet',
   description:
-    'A curated range of vehicle classes — Standard Cars, SUV, MPV, and Mini Vans — sourced through our trusted partner network and matched precisely to the occasion.',
+    'A curated range of vehicle classes, Standard Cars, SUV, MPV, and Mini Vans, sourced through our trusted partner network and matched precisely to the occasion.',
 }
 
 const FLEET = [
@@ -125,8 +125,8 @@ const FLEET_CLASSES: FleetClass[] = [
     id: 'mpv',
     num: '03',
     name: 'Standard Minivan',
-    passengers: '7-8',
-    luggage: '6-8 Luggage',
+    passengers: '06',
+    luggage: '04-05 Luggage',
     image: '/fleet/standard-mpv.png',
     description:
       'Spacious and comfortable transportation for families, small groups, and travellers with additional luggage. Designed for practicality and smooth journeys.',

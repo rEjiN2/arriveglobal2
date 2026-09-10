@@ -10,7 +10,7 @@ export function QuoteBand({ quote, attribution }: QuoteBandProps) {
     <div className={styles.band}>
       <div className={`wrap ${styles.inner}`}>
         <blockquote className={styles.quote}>&ldquo;{quote}&rdquo;</blockquote>
-        <cite className={styles.cite}>— {attribution}</cite>
+        <cite className={styles.cite}>{attribution}</cite>
       </div>
     </div>
   )

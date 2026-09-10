@@ -59,7 +59,7 @@ export function Header() {
     <header className={`${styles.header} ${transparent ? styles.transparent : ''}`}>
       <nav className={styles.nav}>
         {/* Logo */}
-        <Link href="/" aria-label="Arrives Global — home" className={styles.logoLink}>
+        <Link href="/" aria-label="Arrives Global home" className={styles.logoLink}>
           <Image
             src="/logo.svg"
             alt="Arrives Global"
@@ -72,13 +72,20 @@ export function Header() {
 
         {/* Desktop nav links — hidden on mobile */}
         <ul className={styles.navList}>
-          {NAV_ITEMS.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className={styles.navLink}>
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const isActive = pathname === item.href
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
 
         <div className={styles.navRight}>

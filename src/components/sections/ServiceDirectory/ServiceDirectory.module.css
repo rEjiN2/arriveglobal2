@@ -45,6 +45,10 @@
   transform: scaleY(1);
 }
 
+.rowLink {
+  display: contents;
+}
+
 .row:hover .thumb img {
   transform: scale(1.08);
 }

@@ -20,11 +20,11 @@ export function ParallaxIntro() {
 
       <div className={styles.content}>
         <div className={styles.copy}>
-          <h1 className={`${styles.reveal} ${styles.kicker}`} style={{ animationDelay: '0.1s' }}>
+          <h1 className={`${styles.reveal} ${styles.kicker}`} style={{ animationDelay: '0.1s' ,  marginTop: '2.5rem' }}>
             Beyond Transit Elite Excursion
           </h1>
 
-          <p className={`${styles.reveal} ${styles.lede}`} style={{ animationDelay: '0.42s' }}>
+          <p className={`${styles.reveal} ${styles.lede}`} style={{ animationDelay: '0.42s' , marginBottom: '3.5rem' , marginTop: '1.5rem'}}>
             World-class chauffeur service for VVIP clients, vetted professional drivers, a
             curated luxury fleet, and meticulous care across 400+ destinations worldwide.
           </p>
@@ -32,7 +32,7 @@ export function ParallaxIntro() {
           <div className={`${styles.reveal} ${styles.ctaRow}`} style={{ animationDelay: '0.54s' }}>
             <Link href="/contact" className={styles.btnSolid}>
               <CalendarCheck size={16} strokeWidth={2.25} />
-              Book
+              Book Now
             </Link>
             <Link href="/services" className={styles.btnOutline}>
               Our services

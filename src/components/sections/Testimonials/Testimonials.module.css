@@ -1,0 +1,173 @@
+.section {
+  padding: 100px 0;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.kickerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.kickerLine {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+  flex-shrink: 0;
+}
+
+.kickerLine:last-child {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 760px;
+  margin: 56px auto 0;
+}
+
+.nav {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: scale(1.05);
+}
+
+.card {
+  flex: 1;
+  min-width: 0;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quote {
+  font-family: var(--font-space), sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 2.4vw, 24px);
+  line-height: 1.5;
+  min-height: 4.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  margin: 28px auto 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-tint);
+  border: 1px solid var(--line);
+  color: var(--gold);
+  font-family: var(--font-space), sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.attribution {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-family: var(--font-hanken), sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gold);
+}
+
+.role {
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 44px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--line);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+  background: var(--gold-light);
+}
+
+.dotActive {
+  background: var(--gold);
+  transform: scale(1.3);
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .slider {
+    margin-top: 40px;
+    gap: 12px;
+  }
+
+  .nav {
+    width: 36px;
+    height: 36px;
+  }
+}

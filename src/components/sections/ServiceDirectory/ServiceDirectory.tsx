@@ -25,38 +25,41 @@ export function ServiceDirectory() {
 
         <div className={styles.directory}>
           {SERVICES.map((service, i) => (
-            <Link
+            <div
               key={service.slug}
-              href="/services"
               className={cn(styles.row, service.featured && styles.featured)}
             >
               <span className={styles.numGhost} aria-hidden="true">
                 0{i + 1}
               </span>
 
-              <div className={styles.num}>0{i + 1}</div>
+              <Link href="/services" className={styles.rowLink}>
+                <div className={styles.num}>0{i + 1}</div>
 
-              <div className={styles.thumb}>
-                <Image
-                  src={service.image}
-                  alt={service.imageAlt}
-                  fill
-                  className={styles.thumbImg}
-                  sizes="120px"
-                />
-              </div>
+                <div className={styles.thumb}>
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    className={styles.thumbImg}
+                    sizes="120px"
+                  />
+                </div>
 
-              <div className={styles.text}>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
+                <div className={styles.text}>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              </Link>
 
-              <div className={styles.tag}>{service.tag}</div>
+              <Link href="/contact" className={styles.tag}>
+                {service.tag}
+              </Link>
 
-              <span className={styles.arrow}>
+              <Link href="/services" className={styles.arrow}>
                 <ArrowIcon />
-              </span>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       </div>

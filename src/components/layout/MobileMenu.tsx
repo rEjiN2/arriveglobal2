@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { NAV_ITEMS } from '@/lib/constants/navigation'
 import styles from './MobileMenu.module.css'
 
 export function MobileMenu() {
+  const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -50,19 +52,23 @@ export function MobileMenu() {
 
       {/* Nav links */}
       <nav className={styles.panelNav}>
-        {NAV_ITEMS.map((item, i) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={styles.panelLink}
-            onClick={close}
-            style={{ transitionDelay: open ? `${i * 55 + 80}ms` : '0ms' }}
-          >
-            <span className={styles.linkNum}>0{i + 1}</span>
-            <span className={styles.linkLabel}>{item.label}</span>
-            <span className={styles.linkArrow}>→</span>
-          </Link>
-        ))}
+        {NAV_ITEMS.map((item, i) => {
+          const isActive = pathname === item.href
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`${styles.panelLink} ${isActive ? styles.panelLinkActive : ''}`}
+              onClick={close}
+              aria-current={isActive ? 'page' : undefined}
+              style={{ transitionDelay: open ? `${i * 55 + 80}ms` : '0ms' }}
+            >
+              <span className={styles.linkNum}>0{i + 1}</span>
+              <span className={styles.linkLabel}>{item.label}</span>
+              <span className={styles.linkArrow}>→</span>
+            </Link>
+          )
+        })}
       </nav>
 
       {/* Footer strip */}

@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { ClipRevealImage } from '@/components/ui/ClipRevealImage/ClipRevealImage'
 import { ImageMarquee } from '@/components/ui/ImageMarquee/ImageMarquee'
 import { ScrambleButton } from '@/components/ui/ScrambleButton/ScrambleButton'
-import { WhyChooseUs } from '@/components/sections'
 import styles from './page.module.css'
 
 const FLEET_ROW_1 = [
@@ -42,7 +41,7 @@ export default function AboutPage() {
       <section className={styles.pageHeader}>
         <div className={styles.headerBg}>
           <Image
-            src="/banner.jpg"
+            src="/banner.png"
             alt="Arrives Global private chauffeur"
             fill
             priority
@@ -103,14 +102,14 @@ export default function AboutPage() {
               <h2>Every arrival should feel effortless, secure, and exceptional.</h2>
               <div className={styles.splitBar} />
               <p>
-                Arrives Global UAE is a global chauffeur and VVIP travel company founded on one
+                ARRIVES GLOBAL UAE is a global chauffeur and VVIP travel company founded on one
                 belief: arriving anywhere in the world should be seamless, safe, and elevated. We
-                don&rsquo;t just move people — we deliver an experience worthy of the moment.
+                don&rsquo;t just move people: we deliver an experience worthy of the moment.
               </p>
               <p>
                 Through a non-asset network of carefully vetted, professional partners spanning
                 over 400 destinations worldwide, we bring together premium chauffeured vehicles,
-                highly trained chauffeurs, and experienced on-ground event specialists — all held
+                highly trained chauffeurs, and experienced on-ground event specialists, all held
                 to one uncompromising standard of service.
               </p>
               <p>
@@ -135,13 +134,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Why choose us ── */}
-      <WhyChooseUs />
-
       {/* ── Full-width quote with banner ── */}
       <section className={styles.quoteBreak}>
         <Image
-          src="/banner.jpg"
+          src="/banner.png"
           alt="Arrives Global fleet"
           fill
           className={styles.quoteImg}
@@ -154,7 +150,7 @@ export default function AboutPage() {
             Elite Excursion.&rdquo;
           </blockquote>
           <p className={styles.quoteAttr}>
-            This is more than our tagline — it is our approach to every journey we deliver.
+            This is more than our tagline: it is our approach to every journey we deliver.
           </p>
         </div>
       </section>

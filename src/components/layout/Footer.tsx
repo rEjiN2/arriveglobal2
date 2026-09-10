@@ -18,7 +18,7 @@ export function Footer() {
 
           {/* ── Brand ── */}
           <div className={styles.brand}>
-            <Link href="/" aria-label="Arrives Global — home">
+            <Link href="/" aria-label="Arrives Global home">
               <Image
                 src="/logo.svg"
                 alt="Arrives Global"

@@ -48,11 +48,11 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Arrives Global — Beyond Transit · Elite Excursion',
+    default: 'Arrives Global: Beyond Transit · Elite Excursion',
     template: '%s | Arrives Global',
   },
   description:
-    'Luxury chauffeur services worldwide, spanning more than 400 destinations across six continents — VIP meet-and-greet, a curated fleet, and 24/7 concierge support.',
+    'Luxury chauffeur services worldwide, spanning more than 400 destinations across six continents. VIP meet-and-greet, a curated fleet, and 24/7 concierge support.',
   keywords: ['chauffeur', 'VVIP travel', 'airport transfer', 'luxury transport', 'meet and greet'],
   icons: {
     icon: [
