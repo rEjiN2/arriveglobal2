@@ -8,12 +8,12 @@ interface Item {
 }
 
 const ITEMS: Item[] = [
-  { image: '/image3.jpeg', title: 'Personalised Service', body: 'Dedicated support tailored to your needs.' },
-  { image: '/about4.jpg', title: 'Uniformed Drivers', body: 'Professional, courteous and fully trained chauffeurs.' },
-  { image: '/image9.jpeg', title: 'All-Inclusive Pricing', body: 'Transparent prices with no hidden charges.' },
-  { image: '/image16.jpeg', title: 'Multilingual Drivers', body: 'Communicate with ease in your language.' },
-  { image: '/image17.jpeg', title: 'Guaranteed Punctuality', body: 'On-time pickups, every time.' },
-  { image: '/car1.jpg', title: '24/7 Support', body: 'We are always here, whenever you need us.' },
+  { image: '/why-choose/personal-service.png', title: 'Personalised Service', body: 'Dedicated support tailored to your needs.' },
+  { image: '/why-choose/uniformed-driver.png', title: 'Uniformed Drivers', body: 'Professional, courteous and fully trained chauffeurs.' },
+  { image: '/why-choose/all-inclusive-pricing.png', title: 'All-Inclusive Pricing', body: 'Transparent prices with no hidden charges.' },
+  { image: '/why-choose/multi-lingual.png', title: 'Multilingual Drivers', body: 'Communicate with ease in your language.' },
+  { image: '/why-choose/guaranteed-punctuality.png', title: 'Guaranteed Punctuality', body: 'On-time pickups, every time.' },
+  { image: '/why-choose/24n7-suppot.png', title: '24/7 Support', body: 'We are always here, whenever you need us.' },
 ]
 
 export function WhyChooseUsLight() {
@@ -41,7 +41,7 @@ export function WhyChooseUsLight() {
           {[...ITEMS, ...ITEMS].map(({ image, title, body }, i) => (
             <div className={styles.item} key={`${title}-${i}`}>
               <span className={styles.iconWrap}>
-                <Image src={image} alt="" fill sizes="88px" className={styles.icon} />
+                <Image src={image} alt="" fill sizes="88px" quality={90} className={styles.icon} />
               </span>
               <h3 className={styles.itemTitle}>{title}</h3>
               <p className={styles.itemBody}>{body}</p>
