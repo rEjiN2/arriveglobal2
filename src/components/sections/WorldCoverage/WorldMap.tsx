@@ -1,8 +1,11 @@
 'use client'
 
+import type { LeafletMouseEvent } from 'leaflet'
 import { MapContainer, TileLayer, CircleMarker, Tooltip } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import styles from './WorldMap.module.css'
+
+const HOVER_COLOR = '#e8cc6a'
 
 interface RoutePoint {
   lat: number
@@ -45,6 +48,19 @@ export function WorldMap({ dots = [], lineColor = '#c9a227' }: WorldMapProps) {
           center={[hq.lat, hq.lng]}
           radius={7}
           pathOptions={{ color: lineColor, fillColor: lineColor, fillOpacity: 1, weight: 2 }}
+          eventHandlers={{
+            mouseover: (e: LeafletMouseEvent) => {
+              const layer = e.target
+              layer.bringToFront()
+              layer.setRadius(10)
+              layer.setStyle({ weight: 3, color: HOVER_COLOR, fillColor: HOVER_COLOR })
+            },
+            mouseout: (e: LeafletMouseEvent) => {
+              const layer = e.target
+              layer.setRadius(7)
+              layer.setStyle({ weight: 2, color: lineColor, fillColor: lineColor })
+            },
+          }}
         >
           <Tooltip direction="top" offset={[0, -6]} permanent className={styles.leafletTooltip}>
             {hq.name}
@@ -57,8 +73,21 @@ export function WorldMap({ dots = [], lineColor = '#c9a227' }: WorldMapProps) {
             center={[point.lat, point.lng]}
             radius={4}
             pathOptions={{ color: lineColor, fillColor: lineColor, fillOpacity: 0.85, weight: 1 }}
+            eventHandlers={{
+              mouseover: (e: LeafletMouseEvent) => {
+                const layer = e.target
+                layer.bringToFront()
+                layer.setRadius(8)
+                layer.setStyle({ weight: 2, fillOpacity: 1, color: HOVER_COLOR, fillColor: HOVER_COLOR })
+              },
+              mouseout: (e: LeafletMouseEvent) => {
+                const layer = e.target
+                layer.setRadius(4)
+                layer.setStyle({ weight: 1, fillOpacity: 0.85, color: lineColor, fillColor: lineColor })
+              },
+            }}
           >
-            <Tooltip direction="top" offset={[0, -4]} className={styles.leafletTooltip}>
+            <Tooltip direction="top" offset={[0, -4]} permanent className={styles.leafletTooltip}>
               {point.label ?? point.name}
             </Tooltip>
           </CircleMarker>

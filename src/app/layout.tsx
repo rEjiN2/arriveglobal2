@@ -72,23 +72,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      suppressHydrationWarning
+      data-theme="ivory"
       className={`${spaceGrotesk.variable} ${hankenGrotesk.variable} ${barlowCondensed.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`}
     >
-      <head>
-        {/* Apply a saved ivory-theme preference before hydration, so returning
-            visitors on non-home pages don't see a flash of the dark theme. */}
-        <script
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: `try {
-              if (localStorage.getItem('ag-ivory-theme') === '1' && location.pathname !== '/') {
-                document.documentElement.setAttribute('data-theme', 'ivory');
-              }
-            } catch (e) {}`,
-          }}
-        />
-      </head>
       <body>
         <SmoothScroll />
         <Header />

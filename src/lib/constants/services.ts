@@ -9,9 +9,8 @@ export const SERVICES: ServiceItem[] = [
       'Our professional chauffeurs ensure an effortless and refined journey to the airport, where every detail is handled with the utmost care. Book your transfer today and travel in exceptional comfort, confidence, and complete peace of mind.',
     tag: 'Airport',
     featured: true,
-    image:
-      'https://images.pexels.com/photos/18346530/pexels-photo-18346530.jpeg?auto=compress&cs=tinysrgb&w=300',
-    imageAlt: 'Airport transfers',
+    image: '/airport-pickup.jpeg',
+    imageAlt: 'Chauffeur assisting clients at airport pickup',
   },
   {
     id: 2,

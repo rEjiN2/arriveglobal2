@@ -53,7 +53,7 @@ export function ServiceDirectory() {
               </Link>
 
               <Link href="/contact" className={styles.tag}>
-                {service.tag}
+                Get a Quote
               </Link>
 
               <Link href="/services" className={styles.arrow}>

@@ -140,8 +140,8 @@
 @media (max-width: 900px) {
   .hero {
     min-height: 100svh;
-    /* mobile nav is 72px */
-    margin-top: -72px;
+    /* mobile nav (72px) + top bar (40px), now visible in icon-only form on mobile too */
+    margin-top: -112px;
   }
 
   .content {

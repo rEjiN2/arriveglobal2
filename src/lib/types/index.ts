@@ -28,9 +28,8 @@ export interface VehicleCard {
   category: string
   description: string
   image: string
+  passengers: string
   featured?: boolean
-  /** HSL triplet (no hsl() wrapper), e.g. "42 55% 32%" — drives the card's tint/glow. */
-  themeColor: string
 }
 
 export interface NewsletterPayload {

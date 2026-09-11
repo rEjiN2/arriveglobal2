@@ -2,22 +2,30 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ClipRevealImage } from '@/components/ui/ClipRevealImage/ClipRevealImage'
+import { FadeBanner } from '@/components/ui/FadeBanner/FadeBanner'
 import { ImageMarquee } from '@/components/ui/ImageMarquee/ImageMarquee'
 import { ScrambleButton } from '@/components/ui/ScrambleButton/ScrambleButton'
 import styles from './page.module.css'
 
+const HEADER_BANNER_IMAGES = [
+  { src: '/banner.png', alt: 'Arrives Global private chauffeur' },
+  { src: '/about/about-banner-1.png', alt: 'Fleet of luxury vehicles in a showroom' },
+  { src: '/about/about-banner-2.png', alt: 'Arrives Global branded BMW in a garden setting' },
+]
+
 const FLEET_ROW_1 = [
-  { src: '/buisness-class.jpg', alt: 'Business class vehicle' },
-  { src: '/executive-suv.jpg', alt: 'Executive SUV' },
-  { src: '/luxury-sedan.jpg', alt: 'Luxury sedan' },
-  { src: '/standard-sedan.jpg', alt: 'Standard sedan' },
+  { src: '/about/airport-pickup.jpg', alt: 'Chauffeur escorting client to the car with an umbrella' },
+  { src: '/about/branded-car.jpg', alt: 'Arrives Global branded vehicle in the mountains' },
+  { src: '/about/bmw.jpg', alt: 'BMW 7 Series chauffeur vehicle' },
+  { src: '/about/geneva-s580.jpg', alt: 'Mercedes S580 rear cabin interior' },
+  { src: '/about/vito-vvip.jpg', alt: 'VIP van interior with ambient lighting' },
 ]
 
 const FLEET_ROW_2 = [
-  { src: '/built1.jpg', alt: 'Chauffeur fleet detail' },
-  { src: '/built2.jpg', alt: 'Chauffeur fleet detail' },
-  { src: '/built3.jpg', alt: 'Chauffeur fleet detail' },
-  { src: '/car1.jpg', alt: 'Chauffeur fleet detail' },
+  { src: '/about/chauffeur-detail-2.jpg', alt: 'Chauffeur assisting a client from the car' },
+  { src: '/about/chauffeur-detail-3.jpg', alt: 'Rolls-Royce Ghost exterior' },
+  { src: '/about/chauffeur-detail-4.jpg', alt: 'Chauffeur opening the car door' },
+  { src: '/about/chauffeur-detail-5.jpg', alt: 'Close-up of a chauffeur opening a car door in the rain' },
 ]
 
 export const metadata: Metadata = {
@@ -40,14 +48,7 @@ export default function AboutPage() {
       {/* ── Page Header ── */}
       <section className={styles.pageHeader}>
         <div className={styles.headerBg}>
-          <Image
-            src="/banner.png"
-            alt="Arrives Global private chauffeur"
-            fill
-            priority
-            className={styles.headerBgImg}
-            sizes="100vw"
-          />
+          <FadeBanner images={HEADER_BANNER_IMAGES} className={styles.headerBgImg} sizes="100vw" />
           <div className={styles.headerOverlay} />
         </div>
 

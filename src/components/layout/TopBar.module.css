@@ -69,6 +69,24 @@
 
 @media (max-width: 900px) {
   .bar {
+    padding: 0 20px;
+  }
+
+  .right {
+    gap: 16px;
+  }
+
+  .link {
+    gap: 0;
+  }
+
+  .linkText {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .lang {
     display: none;
   }
 }

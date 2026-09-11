@@ -32,14 +32,18 @@ export function TopBar() {
           <ChevronDown size={13} strokeWidth={2.25} />
         </button>
 
-        <a href="tel:+18000000000" className={styles.link}>
+        <a href="tel:+18000000000" className={styles.link} aria-label="Call +1 (800) 000-0000">
           <Phone size={13} strokeWidth={2.25} />
-          +1 (800) 000-0000
+          <span className={styles.linkText}>+1 (800) 000-0000</span>
         </a>
 
-        <a href="mailto:reservations@arrivesglobal.com" className={styles.link}>
+        <a
+          href="mailto:reservations@arrivesglobal.com"
+          className={styles.link}
+          aria-label="Email reservations@arrivesglobal.com"
+        >
           <Mail size={13} strokeWidth={2.25} />
-          reservations@arrivesglobal.com
+          <span className={styles.linkText}>reservations@arrivesglobal.com</span>
         </a>
       </div>
     </div>
