@@ -8,9 +8,9 @@ import { ScrambleButton } from '@/components/ui/ScrambleButton/ScrambleButton'
 import styles from './page.module.css'
 
 const HEADER_BANNER_IMAGES = [
-  { src: '/banner.png', alt: 'Arrives Global private chauffeur' },
-  { src: '/about/about-banner-1.png', alt: 'Fleet of luxury vehicles in a showroom' },
-  { src: '/about/about-banner-2.png', alt: 'Arrives Global branded BMW in a garden setting' },
+  { src: '/about/about-banner-1.png', alt: 'Arrives Global fleet of vehicles at sunset' },
+  { src: '/about/about-banner-2.png', alt: 'Close-up of a Mercedes-Maybach hood ornament' },
+  { src: '/about/about-banner-3.png', alt: 'Luxury vehicle interior dashboard' },
 ]
 
 const FLEET_ROW_1 = [
@@ -109,9 +109,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Through a non-asset network of carefully vetted, professional partners spanning
-                over 400 destinations worldwide, we bring together premium chauffeured vehicles,
-                highly trained chauffeurs, and experienced on-ground event specialists, all held
-                to one uncompromising standard of service.
+                over 400 destinations worldwide, , we bring together premium chauffeured vehicles, highly trained chauffeurs, experienced on-ground event specialists and trusted operations team, all held to one uncompromising standard of service. 
               </p>
               <p>
                 Our clients include discerning individuals, corporate leaders, and event

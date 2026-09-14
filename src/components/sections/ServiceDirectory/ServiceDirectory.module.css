@@ -142,18 +142,17 @@
   font-size: 10.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid rgba(201, 162, 39, 0.4);
+  color: #14161a;
+  background: var(--gold);
+  border: 1px solid var(--gold);
   padding: 7px 14px;
   border-radius: 100px;
   white-space: nowrap;
+  transition: filter 0.2s ease;
 }
 
-.featured .tag {
-  background: var(--gold);
-  color: #14161a;
-  border-color: var(--gold);
+.tag:hover {
+  filter: brightness(1.08);
 }
 
 .arrow {

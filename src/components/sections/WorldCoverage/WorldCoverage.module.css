@@ -20,16 +20,15 @@
   font-size: 15px;
 }
 
-/* ── Leaflet map container ── */
+/* ── Leaflet map container — full-bleed, edge to edge ── */
 .mapWrap {
   position: relative;
   width: 100%;
-  max-width: 1060px;
-  margin: 0 auto;
-  border-radius: 16px;
+  margin: 0 0 48px;
   overflow: hidden;
   box-shadow: 0 2px 40px rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .mapLoading {
@@ -104,10 +103,6 @@
 @media (max-width: 768px) {
   .section {
     padding: 64px 0 50px;
-  }
-
-  .mapWrap {
-    border-radius: 10px;
   }
 
   .statsBar {

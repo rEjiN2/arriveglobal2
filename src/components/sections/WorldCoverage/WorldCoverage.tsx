@@ -113,16 +113,18 @@ export function WorldCoverage() {
       <div className="wrap">
         <div className={styles.head}>
           <div className="kicker" style={{ justifyContent: 'center', color: 'var(--gold)' }}>
-            Where we operate
+            Our Worldwide Service Network
           </div>
-          <h2>A global network,<br />destination by destination.</h2>
+          <h2>Expertly Connecting You Across the World&rsquo;s Leading Destinations</h2>
           <p>Every pin marks a destination served through our worldwide network of contracted chauffeur partners.</p>
         </div>
+      </div>
 
-        <div className={styles.mapWrap}>
-          <WorldMap dots={MAP_ROUTES} />
-        </div>
+      <div className={styles.mapWrap}>
+        <WorldMap dots={MAP_ROUTES} />
+      </div>
 
+      <div className="wrap">
         <p className={styles.tagline}>
           &ldquo;Wherever you are. Wherever you want to go. We&rsquo;ll take you there.&rdquo;
         </p>

@@ -36,7 +36,12 @@ const FLEET = [
       'Discreet, comfortable saloons for daily transfers and business travel.',
     ],
     features: ['Uniformed, professional chauffeur', 'All-inclusive, transparent pricing', 'Live flight tracking on airport routes', 'Complete cleanliness, every journey'],
-    image: '/fleet/standard-sedan.png',
+    images: [
+      '/fleet/fleet-banner-1.png',
+      '/fleet/fleet-banner-2.png',
+      '/fleet/fleet-banner-3.png',
+      '/fleet/fleet-banner-4.png',
+    ],
   },
   {
     slug: 'suv',
@@ -46,7 +51,7 @@ const FLEET = [
       'Commanding presence and space, suited to executive and family travel alike.',
     ],
     features: ['Multilingual chauffeurs', 'Uniformed, professional presentation', 'All-inclusive, transparent pricing', 'Available across 400+ destinations'],
-    image: '/fleet/suv.png',
+    images: ['/fleet/suv.png'],
   },
   {
     slug: 'mpv',
@@ -56,7 +61,7 @@ const FLEET = [
       'Generous cabin comfort for small groups travelling together in style.',
     ],
     features: ['Complete cleanliness, hospital-grade standard', 'Punctual, precisely timed pickups', '24/7 concierge coordination', 'Curated luxury fleet'],
-    image: '/fleet/standard-mpv.png',
+    images: ['/fleet/standard-mpv.png'],
   },
   {
     slug: 'mini-vans',
@@ -66,7 +71,7 @@ const FLEET = [
       'Flexible, well-appointed transport for groups of up to seven.',
     ],
     features: ['Uniformed, professional chauffeur', 'All-inclusive, transparent pricing', 'Available across 400+ destinations', 'Punctuality, every time'],
-    image: '/fleet/luxury-mini-van.png',
+    images: ['/fleet/luxury-mini-van.png'],
   },
 ]
 
@@ -95,7 +100,7 @@ const FLEET_CLASSES: FleetClass[] = [
     name: 'Sedan',
     passengers: '3',
     luggage: '2-4 Luggage',
-    image: '/fleet/standard-sedan.png',
+    image: '/fleet/standard-sedan-home.png',
     description:
       'Refined and comfortable travel for up to three passengers, with generous luggage capacity for up to four small suitcases or two large and one small suitcase.',
     models: ['Lexus ES 300/350 (UAE)', 'Mercedes-Benz E-Class (EU)', 'Tesla Model Y/X (EU)', 'Ford Taurus', 'Honda Accord', 'Hyundai Sonata', 'Cadillac XTS/XT6', 'Lincoln Town Car', 'BMW 5 Series'],
@@ -111,7 +116,7 @@ const FLEET_CLASSES: FleetClass[] = [
     name: 'SUV',
     passengers: '5',
     luggage: '4-6 Luggage',
-    image: '/fleet/suv.png',
+    image: '/fleet/suv-home.png',
     description:
       'Spacious and sophisticated SUV for up to five passengers with generous room for both passengers and luggage. Perfect for airport transfers, business, family and leisure journeys.',
     models: ['BMW', 'Cadillac Escalade', 'Lexus', 'Chevrolet Tahoe', 'GMC Yukon'],
@@ -127,7 +132,7 @@ const FLEET_CLASSES: FleetClass[] = [
     name: 'Standard Minivan',
     passengers: '06',
     luggage: '04-05 Luggage',
-    image: '/fleet/standard-mpv.png',
+    image: '/fleet/standard-mpv-home.png',
     description:
       'Spacious and comfortable transportation for families, small groups, and travellers with additional luggage. Designed for practicality and smooth journeys.',
     models: ['Hyundai H1', 'Hyundai Staria Lounge', 'Kia Carnival'],
@@ -144,7 +149,7 @@ const FLEET_CLASSES: FleetClass[] = [
     suffix: 'Van',
     passengers: '6-7',
     luggage: '6-8 Luggage',
-    image: '/fleet/luxury-mini-van.png',
+    image: '/fleet/luxury-mini-van-home.png',
     description:
       'Premium vans offering exceptional space, comfort, and convenience for groups, families, and corporate teams.',
     models: ['Mercedes-Benz V-Class', 'Mercedes-Benz Sprinter', 'Ford Transit', 'Other Premium People Carriers'],
@@ -160,7 +165,7 @@ const FLEET_CLASSES: FleetClass[] = [
     name: 'Luxury Sedan',
     passengers: '3',
     luggage: '2-3 Luggage',
-    image: '/fleet/luxury-sedan.png',
+    image: '/fleet/luxury-sedan-home.png',
     description:
       'The highest standard of chauffeured travel with elegance, privacy, and uncompromising comfort for executive travel, VIP transfers, special occasions, and exclusive events.',
     models: ['Mercedes-Benz S-Class', 'BMW 7 Series', 'Audi A8', 'Range Rover', 'Bentley', 'Rolls-Royce', 'Other Luxury Models'],
@@ -176,7 +181,7 @@ const FLEET_CLASSES: FleetClass[] = [
     name: 'Mini Bus',
     passengers: '12-20',
     luggage: '10-20 Luggage',
-    image: '/fleet/mini-coach.png',
+    image: '/fleet/mini-coach-home.png',
     description:
       'Comfortable and efficient transportation for larger groups, families, corporate teams, and event guests. Ideal for airport transfers, group travel, business events, and leisure journeys.',
     tags: [
@@ -191,7 +196,7 @@ const FLEET_CLASSES: FleetClass[] = [
     name: 'Coach',
     passengers: '20-50',
     luggage: 'Large Luggage',
-    image: '/fleet/luxury-coach.png',
+    image: '/fleet/luxury-coach-home.png',
     description:
       'Elevated group travel with exceptional space, premium comfort, and refined service. Perfect for corporate delegations, VIP groups, events, tours, and long-distance journeys.',
     tags: [
@@ -235,7 +240,7 @@ export default function SelectionPage() {
 
           <div className={styles.heroRight}>
             <ImageAccordion
-              items={FLEET.map((v) => ({ slug: v.slug, title: v.name, image: v.image }))}
+              items={FLEET.map((v) => ({ slug: v.slug, title: v.name, images: v.images }))}
             />
           </div>
 

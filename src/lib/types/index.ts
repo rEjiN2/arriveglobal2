@@ -8,6 +8,7 @@ export interface City {
 export interface NavigationItem {
   label: string
   href: string
+  children?: NavigationItem[]
 }
 
 export interface ServiceItem {
@@ -16,7 +17,6 @@ export interface ServiceItem {
   title: string
   description: string
   tag: string
-  featured?: boolean
   image: string
   imageAlt: string
 }

@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 const CHANNELS = [
   {
     label: 'Email',
-    value: 'hello@arrivesglobal.com',
+    value: 'reservations@arrivesglobal.com',
     note: 'For quotes & general enquiries',
-    href: 'mailto:hello@arrivesglobal.com',
+    href: 'mailto:reservations@arrivesglobal.com',
   },
   {
     label: 'WhatsApp',
@@ -74,7 +74,7 @@ export default function ContactPage() {
 
               <div className={styles.responseTime}>
                 <span className={styles.responseDot} />
-                <span>Response within <strong>15 min</strong> during business hours</span>
+                <span>Response within <strong>15 min</strong> during UAE business hours</span>
               </div>
             </div>
 

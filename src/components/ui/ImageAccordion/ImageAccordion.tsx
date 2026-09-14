@@ -1,21 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './ImageAccordion.module.css'
 
 interface AccordionItem {
   slug: string
   title: string
-  image: string
+  images: string[]
 }
 
 interface ImageAccordionProps {
   items: AccordionItem[]
   defaultActive?: number
+  rotateMs?: number
 }
 
-export function ImageAccordion({ items, defaultActive = 0 }: ImageAccordionProps) {
+export function ImageAccordion({ items, defaultActive = 0, rotateMs = 2600 }: ImageAccordionProps) {
   const [active, setActive] = useState(defaultActive)
 
   return (
@@ -28,12 +29,11 @@ export function ImageAccordion({ items, defaultActive = 0 }: ImageAccordionProps
             className={`${styles.panel} ${isActive ? styles.panelActive : ''}`}
             onMouseEnter={() => setActive(i)}
           >
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              className={styles.panelImg}
-              sizes={isActive ? '320px' : '48px'}
+            <PanelImages
+              images={item.images}
+              title={item.title}
+              isActive={isActive}
+              rotateMs={rotateMs}
             />
             <div className={styles.panelTint} />
             <span className={styles.panelCaption}>{item.title}</span>
@@ -41,5 +41,49 @@ export function ImageAccordion({ items, defaultActive = 0 }: ImageAccordionProps
         )
       })}
     </div>
+  )
+}
+
+function PanelImages({
+  images,
+  title,
+  isActive,
+  rotateMs,
+}: {
+  images: string[]
+  title: string
+  isActive: boolean
+  rotateMs: number
+}) {
+  const [index, setIndex] = useState(0)
+  const rotating = images.length > 1
+
+  useEffect(() => {
+    if (!rotating) return
+    const id = setInterval(() => setIndex((i) => (i + 1) % images.length), rotateMs)
+    return () => clearInterval(id)
+  }, [rotating, images.length, rotateMs])
+
+  return (
+    <>
+      {images.map((src, i) => (
+        <Image
+          key={src}
+          src={src}
+          alt={title}
+          fill
+          priority={i === 0}
+          className={`${styles.panelImg} ${rotating ? styles.panelImgFade : ''} ${i === index ? styles.panelImgVisible : ''}`}
+          sizes={isActive ? '320px' : '48px'}
+        />
+      ))}
+      {rotating && isActive && (
+        <div className={styles.panelDots}>
+          {images.map((src, i) => (
+            <span key={src} className={`${styles.panelDot} ${i === index ? styles.panelDotActive : ''}`} />
+          ))}
+        </div>
+      )}
+    </>
   )
 }

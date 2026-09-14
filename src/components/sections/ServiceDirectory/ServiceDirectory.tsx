@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { SERVICES } from '@/lib/constants/services'
-import { cn } from '@/lib/utils/cn'
 import styles from './ServiceDirectory.module.css'
 
 const ArrowIcon = () => (
@@ -25,10 +24,7 @@ export function ServiceDirectory() {
 
         <div className={styles.directory}>
           {SERVICES.map((service, i) => (
-            <div
-              key={service.slug}
-              className={cn(styles.row, service.featured && styles.featured)}
-            >
+            <div key={service.slug} className={styles.row}>
               <span className={styles.numGhost} aria-hidden="true">
                 0{i + 1}
               </span>

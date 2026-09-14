@@ -57,6 +57,7 @@ export function Footer() {
               <Link href="/services">Services</Link>
               <Link href="/selection">The Selection</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/contact">Get a Quote</Link>
             </div>
 
             <div className={styles.col}>

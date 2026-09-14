@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ChevronDown } from 'lucide-react'
 import { NAV_ITEMS } from '@/lib/constants/navigation'
 import { MobileMenu } from './MobileMenu'
 import { TopBar } from './TopBar'
@@ -47,15 +48,31 @@ export function Header() {
         <ul className={styles.navList}>
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.href
+            const hasChildren = !!item.children?.length
+
             return (
-              <li key={item.href}>
+              <li key={item.href} className={hasChildren ? styles.navItemDropdown : undefined}>
                 <Link
                   href={item.href}
                   className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
                   aria-current={isActive ? 'page' : undefined}
+                  aria-haspopup={hasChildren ? 'true' : undefined}
                 >
                   {item.label}
+                  {hasChildren && <ChevronDown size={13} strokeWidth={2.25} className={styles.navChevron} />}
                 </Link>
+
+                {hasChildren && (
+                  <ul className={styles.dropdown}>
+                    {item.children!.map((child) => (
+                      <li key={child.href}>
+                        <Link href={child.href} className={styles.dropdownLink}>
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             )
           })}
