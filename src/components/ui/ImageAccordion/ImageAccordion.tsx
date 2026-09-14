@@ -72,9 +72,10 @@ function PanelImages({
           src={src}
           alt={title}
           fill
+          quality={90}
           priority={i === 0}
           className={`${styles.panelImg} ${rotating ? styles.panelImgFade : ''} ${i === index ? styles.panelImgVisible : ''}`}
-          sizes={isActive ? '320px' : '48px'}
+          sizes={isActive ? '(max-width: 640px) 90vw, 600px' : '64px'}
         />
       ))}
       {rotating && isActive && (

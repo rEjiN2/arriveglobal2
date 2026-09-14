@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { ClipRevealImage } from '@/components/ui/ClipRevealImage/ClipRevealImage'
 import { FadeBanner } from '@/components/ui/FadeBanner/FadeBanner'
 import { ImageMarquee } from '@/components/ui/ImageMarquee/ImageMarquee'
-import { ScrambleButton } from '@/components/ui/ScrambleButton/ScrambleButton'
 import styles from './page.module.css'
 
 const HEADER_BANNER_IMAGES = [
@@ -167,7 +166,7 @@ export default function AboutPage() {
                 All-inclusive pricing, confirmed upfront.
               </p>
               <div className={styles.ctaActions}>
-                <ScrambleButton href="/contact" text="Book a ride" />
+                <Link href="/contact" className={styles.ctaBtn}>Book a ride</Link>
                 <Link href="/services" className={styles.ctaLink}>
                   View services →
                 </Link>
