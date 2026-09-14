@@ -43,6 +43,7 @@ export const CITIES: City[] = [
   { name: 'New Delhi', code: 'IN', region: 'Asia Pacific' },
   { name: 'Jakarta', code: 'ID', region: 'Asia Pacific' },
   { name: 'Manila', code: 'PH', region: 'Asia Pacific' },
+  { name: 'Colombo', code: 'LK', region: 'Asia Pacific' },
 
   // Americas
   { name: 'New York', code: 'US', region: 'Americas' },
@@ -61,7 +62,6 @@ export const CITIES: City[] = [
   { name: 'Johannesburg', code: 'ZA', region: 'Africa & Oceania' },
   { name: 'Cape Town', code: 'ZA', region: 'Africa & Oceania' },
   { name: 'Nairobi', code: 'KE', region: 'Africa & Oceania' },
-  { name: 'Lagos', code: 'NG', region: 'Africa & Oceania' },
   { name: 'Sydney', code: 'AU', region: 'Africa & Oceania' },
   { name: 'Melbourne', code: 'AU', region: 'Africa & Oceania' },
   { name: 'Auckland', code: 'NZ', region: 'Africa & Oceania' },

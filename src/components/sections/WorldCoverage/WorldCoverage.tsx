@@ -55,6 +55,7 @@ const COORDS: Record<string, { lat: number; lng: number }> = {
   'New Delhi': { lat: 28.61, lng: 77.21 },
   Jakarta: { lat: -6.21, lng: 106.85 },
   Manila: { lat: 14.6, lng: 120.98 },
+  Colombo: { lat: 6.93, lng: 79.85 },
 
   // Americas
   'New York': { lat: 40.71, lng: -74.01 },
@@ -73,7 +74,6 @@ const COORDS: Record<string, { lat: number; lng: number }> = {
   Johannesburg: { lat: -26.2, lng: 28.05 },
   'Cape Town': { lat: -33.92, lng: 18.42 },
   Nairobi: { lat: -1.29, lng: 36.82 },
-  Lagos: { lat: 6.52, lng: 3.38 },
   Sydney: { lat: -33.87, lng: 151.21 },
   Melbourne: { lat: -37.81, lng: 144.96 },
   Auckland: { lat: -36.85, lng: 174.76 },
