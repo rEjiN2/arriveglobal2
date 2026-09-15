@@ -74,7 +74,7 @@ export default function ContactPage() {
 
               <div className={styles.responseTime}>
                 <span className={styles.responseDot} />
-                <span>Response within <strong>15 min</strong> during UAE business hours</span>
+                <span>Response within <strong>15 min</strong> during  working UAE business hours</span>
               </div>
             </div>
 

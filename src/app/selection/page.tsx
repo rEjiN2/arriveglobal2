@@ -37,7 +37,7 @@ const FLEET = [
     ],
     features: ['Uniformed, professional chauffeur', 'All-inclusive, transparent pricing', 'Live flight tracking on airport routes', 'Complete cleanliness, every journey'],
     images: [
-      '/fleet/fleet-banner-1.png',
+      '/fleet/standard-sedan-home.png',
     ],
   },
   {
@@ -48,7 +48,7 @@ const FLEET = [
       'Commanding presence and space, suited to executive and family travel alike.',
     ],
     features: ['Multilingual chauffeurs', 'Uniformed, professional presentation', 'All-inclusive, transparent pricing', 'Available across 400+ destinations'],
-    images: ['/fleet/fleet-banner-2.png'],
+    images: ['/fleet/suv-home.png'],
   },
   {
     slug: 'mpv',
@@ -58,7 +58,7 @@ const FLEET = [
       'Generous cabin comfort for small groups travelling together in style.',
     ],
     features: ['Complete cleanliness, hospital-grade standard', 'Punctual, precisely timed pickups', '24/7 concierge coordination', 'Curated luxury fleet'],
-    images: ['/fleet/fleet-banner-3.png'],
+    images: ['/fleet/standard-mpv-home.png'],
   },
   {
     slug: 'mini-vans',
@@ -68,7 +68,7 @@ const FLEET = [
       'Flexible, well-appointed transport for groups of up to seven.',
     ],
     features: ['Uniformed, professional chauffeur', 'All-inclusive, transparent pricing', 'Available across 400+ destinations', 'Punctuality, every time'],
-    images: ['/fleet/fleet-banner-4.png'],
+    images: ['/fleet/luxury-mini-van-home.png'],
   },
 ]
 
