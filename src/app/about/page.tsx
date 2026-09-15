@@ -52,28 +52,26 @@ export default function AboutPage() {
         </div>
 
         <div className={styles.headerContent}>
-          <div className="wrap">
-            <div className={styles.headerCopy}>
-              <p className={`${styles.reveal} ${styles.headerKicker}`} style={{ animationDelay: '0.1s' }}>
-                Our purpose
-              </p>
-              <h1 className={`${styles.reveal} ${styles.headerTitle}`} style={{ animationDelay: '0.22s' }}>
-                Redefining<br />global luxury<br />travel.
-              </h1>
-              <p className={`${styles.reveal} ${styles.headerLead}`} style={{ animationDelay: '0.38s' }}>
-                ARRIVES Global provides VVIP clients with premium chauffeur services, elite event
-                transportation, and seamless meet-and-greet care worldwide. Operating a non-asset
-                network, we accept complete accountability for our clients&rsquo; absolute comfort,
-                safety, and prestige at every destination.
-              </p>
-              <p className={`${styles.reveal} ${styles.headerSub}`} style={{ animationDelay: '0.5s' }}>
-                Our vision: to redefine the standards of global luxury travel through flawless,
-                secure, and prestigious end-to-end orchestration.
-              </p>
-              <div className={`${styles.reveal} ${styles.headerMetaRow}`} style={{ animationDelay: '0.62s' }}>
-                <div className={styles.headerRule} />
-                <p className={styles.headerMeta}>UAE &nbsp;·&nbsp; Global chauffeur &amp; VVIP travel network</p>
-              </div>
+          <div className={styles.headerCopy}>
+            <p className={`${styles.reveal} ${styles.headerKicker}`} style={{ animationDelay: '0.1s' }}>
+              Our purpose
+            </p>
+            <h1 className={`${styles.reveal} ${styles.headerTitle}`} style={{ animationDelay: '0.22s' }}>
+              Redefining<br />global luxury<br />travel.
+            </h1>
+            <p className={`${styles.reveal} ${styles.headerLead}`} style={{ animationDelay: '0.38s' }}>
+              ARRIVES Global provides VVIP clients with premium chauffeur services, elite event
+              transportation, and seamless meet-and-greet care worldwide. Operating a non-asset
+              network, we accept complete accountability for our clients&rsquo; absolute comfort,
+              safety, and prestige at every destination.
+            </p>
+            <p className={`${styles.reveal} ${styles.headerSub}`} style={{ animationDelay: '0.5s' }}>
+              Our vision: to redefine the standards of global luxury travel through flawless,
+              secure, and prestigious end-to-end orchestration.
+            </p>
+            <div className={`${styles.reveal} ${styles.headerMetaRow}`} style={{ animationDelay: '0.62s' }}>
+              <div className={styles.headerRule} />
+              <p className={styles.headerMeta}>UAE &nbsp;·&nbsp; Global chauffeur &amp; VVIP travel network</p>
             </div>
           </div>
         </div>
