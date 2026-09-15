@@ -97,7 +97,7 @@ export default function TermsPage() {
             <h2>7. Chauffeur Details</h2>
             <p>
               Chauffeur names and contact details are typically provided within 24 hours
-              prior to the scheduled service, depending on the destination and booking date.
+              to the scheduled service, depending on the destination and booking date.
               Please note that these details may be subject to change at short notice due to
               operational or dispatch requirements.
             </p>

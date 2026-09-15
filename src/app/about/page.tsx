@@ -159,11 +159,9 @@ export default function AboutPage() {
           <div className={styles.ctaGrid}>
             <div className={styles.ctaCopy}>
               <div className="kicker">Ready to ride</div>
-              <h2>Experience the standard<br />for yourself.</h2>
+              <h2>Experience the standard for yourself.</h2>
               <p className={styles.ctaLede}>
-                One request. One dedicated chauffeur.
-                <br />
-                All-inclusive pricing, confirmed upfront.
+                One request. One dedicated chauffeur. All-inclusive pricing, confirmed upfront.
               </p>
               <div className={styles.ctaActions}>
                 <Link href="/contact" className={styles.ctaBtn}>Book a ride</Link>

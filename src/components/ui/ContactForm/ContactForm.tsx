@@ -182,7 +182,7 @@ export function ContactForm() {
         <h3 className={styles.successTitle}>Request received.</h3>
         <p className={styles.successBody}>
           We will review your trip details and respond with a fixed fare within
-          15 minutes during business hours, or within 1 hour overnight.
+            15 minutes working UAE business hours, or within 1 hour overnight.
         </p>
         <button className={styles.successReset} onClick={resetForm}>
           Submit another request
@@ -275,7 +275,7 @@ export function ContactForm() {
       </button>
 
       <p className={styles.note}>
-        We respond within 15 minutes during business hours.
+        We respond within 15 minutes working UAE business hours.
         All enquiries are handled confidentially.
       </p>
     </form>
