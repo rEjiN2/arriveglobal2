@@ -417,7 +417,7 @@
   }
 
   .headerContent {
-    padding: 28px 0 56px;
+    padding: clamp(88px, 18vh, 150px) 0 56px;
   }
 
   .headerCopy {
