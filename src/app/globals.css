@@ -64,7 +64,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.25s ease, color 0.25s ease;
-  overflow-x: hidden;
   overscroll-behavior-x: none;
   width: 100%;
 }

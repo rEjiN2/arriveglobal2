@@ -109,6 +109,7 @@ interface FleetClass {
   passengers: string
   luggage: string
   image: string
+  imageAspect?: string
   description: string
   models?: string[]
   tags: FleetTag[]
@@ -148,40 +149,8 @@ const FLEET_CLASSES: FleetClass[] = [
     ],
   },
   {
-    id: 'mpv',
-    num: '03',
-    name: 'Standard Mini Van',
-    passengers: '06',
-    luggage: '04-05 Luggage',
-    image: '/fleet/standard-mpv-home.png',
-    description:
-      'Spacious and comfortable transportation for families, small groups, and travellers with additional luggage. Designed for practicality and smooth journeys.',
-    models: ['Hyundai H1', 'Hyundai Staria Lounge', 'Kia Carnival'],
-    tags: [
-      { Icon: UsersRound, label: 'Group Travel' },
-      { Icon: Package, label: 'Large Luggage' },
-      { Icon: Smile, label: 'Comfortable' },
-    ],
-  },
-  {
-    id: 'mini-vans',
-    num: '04',
-    name: 'Luxury Mini Van',
-    passengers: '6-7',
-    luggage: '6-8 Luggage',
-    image: '/fleet/luxury-mini-van-home.png',
-    description:
-      'Premium vans offering exceptional space, comfort, and convenience for groups, families, and corporate teams.',
-    models: ['Mercedes-Benz V-Class', 'Mercedes-Benz Sprinter', 'Ford Transit', 'Other Premium People Carriers'],
-    tags: [
-      { Icon: Shuffle, label: 'Premium Space' },
-      { Icon: UsersRound, label: 'Group Comfort' },
-      { Icon: ShieldCheck, label: 'Convenience' },
-    ],
-  },
-  {
     id: 'luxury-sedan',
-    num: '05',
+    num: '03',
     name: 'Luxury Sedan',
     passengers: '3',
     luggage: '2-3 Luggage',
@@ -196,12 +165,47 @@ const FLEET_CLASSES: FleetClass[] = [
     ],
   },
   {
+    id: 'mpv',
+    num: '04',
+    name: 'Standard Mini Van',
+    passengers: '06',
+    luggage: '04-05 Luggage',
+    image: '/fleet/standard-mpv-home.png',
+    imageAspect: '3 / 2',
+    description:
+      'Spacious and comfortable transportation for families, small groups, and travellers with additional luggage. Designed for practicality and smooth journeys.',
+    models: ['Hyundai H1', 'Hyundai Staria Lounge', 'Kia Carnival'],
+    tags: [
+      { Icon: UsersRound, label: 'Group Travel' },
+      { Icon: Package, label: 'Large Luggage' },
+      { Icon: Smile, label: 'Comfortable' },
+    ],
+  },
+  {
+    id: 'mini-vans',
+    num: '05',
+    name: 'Luxury Mini Van',
+    passengers: '6-7',
+    luggage: '6-8 Luggage',
+    image: '/fleet/luxury-mini-van-home.png',
+    imageAspect: '3 / 2',
+    description:
+      'Premium vans offering exceptional space, comfort, and convenience for groups, families, and corporate teams.',
+    models: ['Mercedes-Benz V-Class', 'Mercedes-Benz Sprinter', 'Ford Transit', 'Other Premium People Carriers'],
+    tags: [
+      { Icon: Shuffle, label: 'Premium Space' },
+      { Icon: UsersRound, label: 'Group Comfort' },
+      { Icon: ShieldCheck, label: 'Convenience' },
+    ],
+  },
+  {
     id: 'mini-bus',
     num: '06',
     name: 'Mini Bus',
     passengers: '12-20',
     luggage: '10-20 Luggage',
     image: '/fleet/mini-coach-home.png',
+    imageAspect: '3 / 2',
     description:
       'Comfortable and efficient transportation for larger groups, families, corporate teams, and event guests. Ideal for airport transfers, group travel, business events, and leisure journeys.',
     tags: [
@@ -217,6 +221,7 @@ const FLEET_CLASSES: FleetClass[] = [
     passengers: '20-50',
     luggage: 'Large Luggage',
     image: '/fleet/luxury-coach-home.png',
+    imageAspect: '3 / 2',
     description:
       'Elevated group travel with exceptional space, premium comfort, and refined service. Perfect for corporate delegations, VIP groups, events, tours, and long-distance journeys.',
     tags: [
@@ -303,7 +308,10 @@ export default function SelectionPage() {
                   </div>
                 </div>
 
-                <div className={styles.classImgWrap}>
+                <div
+                  className={styles.classImgWrap}
+                  style={item.imageAspect ? { height: 'auto', aspectRatio: item.imageAspect } : undefined}
+                >
                   <Image
                     src={item.image}
                     alt={item.name}
