@@ -131,7 +131,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .main {
     flex-direction: column;
     gap: 48px;

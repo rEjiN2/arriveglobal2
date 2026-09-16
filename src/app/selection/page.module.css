@@ -378,7 +378,7 @@
   align-items: center;
   gap: 8px;
   padding: 13px 28px;
-  border-radius: 999px;
+  border-radius: 5px;
   background: var(--gold);
   /* Fixed dark text, not a theme token — gold stays mid-tone in both the
      dark and ivory themes, so dark text is always the right contrast here. */
@@ -426,7 +426,7 @@
   align-items: center;
   justify-content: center;
   padding: 14px 36px;
-  border-radius: 999px;
+  border-radius: 5px;
   background: var(--ink);
   color: var(--white);
   font-size: 14px;
@@ -442,7 +442,7 @@
   align-items: center;
   justify-content: center;
   padding: 14px 36px;
-  border-radius: 999px;
+  border-radius: 5px;
   border: 1px solid var(--line);
   color: var(--ink);
   font-size: 14px;

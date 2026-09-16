@@ -135,7 +135,7 @@
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  border-radius: 999px;
+  border-radius: 5px;
   background: linear-gradient(135deg, #E8C76A 0%, #D6AA45 100%);
   color: #111315;
   font-size: 14px;
@@ -155,7 +155,7 @@
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  border-radius: 999px;
+  border-radius: 5px;
   border: 1px solid rgba(214, 170, 69, 0.45);
   color: #F4F0E8;
   font-size: 14px;
@@ -519,7 +519,7 @@
   align-items: center;
   justify-content: center;
   padding: 14px 36px;
-  border-radius: 999px;
+  border-radius: 5px;
   background: var(--ink);
   color: var(--white);
   font-size: 14px;
@@ -537,7 +537,7 @@
   align-items: center;
   justify-content: center;
   padding: 14px 36px;
-  border-radius: 999px;
+  border-radius: 5px;
   border: 1px solid var(--line);
   color: var(--ink);
   font-size: 14px;

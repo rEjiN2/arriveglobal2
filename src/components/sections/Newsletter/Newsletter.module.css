@@ -27,7 +27,7 @@
   display: flex;
   max-width: 420px;
   border: 1px solid var(--ink);
-  border-radius: 999px;
+  border-radius: 5px;
   overflow: hidden;
   transition: border-color 0.2s;
 }
@@ -65,7 +65,7 @@
   cursor: pointer;
   font-family: var(--font-hanken), sans-serif;
   white-space: nowrap;
-  border-radius: 999px;
+  border-radius: 5px;
   transition: background 0.2s;
   flex-shrink: 0;
 }
@@ -166,10 +166,14 @@
   .input,
   .submitBtn {
     border: 1px solid var(--line);
-    border-radius: 999px;
   }
 
   .input {
+    border-radius: 999px;
     padding: 14px 20px;
+  }
+
+  .submitBtn {
+    border-radius: 5px;
   }
 }
