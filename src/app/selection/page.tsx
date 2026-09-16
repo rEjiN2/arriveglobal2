@@ -72,6 +72,30 @@ const FLEET = [
   },
 ]
 
+const FLEET_EXTRAS = [
+  {
+    id: 'luxury-vans',
+    tag: 'Luxury Vans',
+    category: 'Executive Van · VIP Sprinter',
+    headline: 'Boardroom-grade interiors for VVIP groups and roadshow travel.',
+    image: '/fleet/luxury-mini-van.png',
+  },
+  {
+    id: 'mini-buses',
+    tag: 'Mini Buses',
+    category: '14-Seater · 22-Seater',
+    headline: 'Comfortable group mobility for delegations, crews, and events.',
+    image: '/fleet/mini-coach.png',
+  },
+  {
+    id: 'coaches',
+    tag: 'Coaches',
+    category: 'Standard Coach · Luxury Motor Coach',
+    headline: 'Full-size coaches for conferences, large events, and group logistics.',
+    image: '/fleet/luxury-coach.png',
+  },
+]
+
 interface FleetTag {
   Icon: typeof Users
   label: string
@@ -126,7 +150,7 @@ const FLEET_CLASSES: FleetClass[] = [
   {
     id: 'mpv',
     num: '03',
-    name: 'Standard Minivan',
+    name: 'Standard Mini Van',
     passengers: '06',
     luggage: '04-05 Luggage',
     image: '/fleet/standard-mpv-home.png',
@@ -142,8 +166,7 @@ const FLEET_CLASSES: FleetClass[] = [
   {
     id: 'mini-vans',
     num: '04',
-    name: 'Luxury Minivan',
-    suffix: 'Van',
+    name: 'Luxury Mini Van',
     passengers: '6-7',
     luggage: '6-8 Luggage',
     image: '/fleet/luxury-mini-van-home.png',
@@ -329,6 +352,55 @@ export default function SelectionPage() {
             <Link href="/contact" className={styles.fleetCtaBtn}>
               Book Now <ArrowRight size={16} strokeWidth={2} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Group & Event Fleet ── */}
+      <section className={styles.groupFleetSection}>
+        <div className="wrap">
+          <div className={styles.fleetHead}>
+            <p className={styles.fleetKicker}>
+              <span className={styles.fleetKickerMark}>✦</span> The fleet <span className={styles.fleetKickerMark}>✦</span>
+            </p>
+            <h2 className={styles.fleetHeading}>Group &amp; Event Fleet</h2>
+            <p className={styles.fleetSub}>
+              From boardroom-grade vans to full-size coaches, built for delegations, crews, and
+              large-scale events.
+            </p>
+          </div>
+
+          <div className={styles.rollList}>
+            {FLEET_EXTRAS.map((f) => (
+              <div key={f.id} id={f.id} className={styles.rollRow}>
+                <div className={styles.rollWrap}>
+                  <div className={styles.rollInner}>
+                    <div className={styles.rollLine}>
+                      <h2 className={styles.rollTitle}>{f.tag}</h2>
+                    </div>
+                    <div className={styles.rollLine}>
+                      <h2 className={`${styles.rollTitle} ${styles.rollTitleHover}`}>{f.tag}</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <span className={styles.rollCategory}>{f.category}</span>
+                <p className={styles.rollHeadline}>{f.headline}</p>
+
+                <div className={styles.rollReveal}>
+                  <div className={styles.rollRevealImg}>
+                    <Image src={f.image} alt={f.tag} fill className={styles.rollRevealPic} sizes="140px" />
+                    <div className={styles.rollRevealTint} />
+                  </div>
+                  <div className={styles.rollRevealText}>
+                    <p className={styles.rollRevealHeadline}>{f.headline}</p>
+                    <Link href="/contact" className={styles.rollRevealCta}>
+                      Get a quote →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

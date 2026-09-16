@@ -176,11 +176,6 @@
   padding: 40px 0 100px;
 }
 
-.fleetSection {
-  padding-top: 96px;
-  border-top: 1px solid var(--line);
-}
-
 .rollKicker {
   font-family: var(--font-mono), monospace;
   font-size: 11px;
@@ -201,20 +196,6 @@
   border-radius: 50%;
   background: var(--gold);
   flex-shrink: 0;
-}
-
-.fleetHeading {
-  font-size: clamp(28px, 3.4vw, 42px);
-  color: var(--ink);
-  margin-bottom: 12px;
-}
-
-.fleetSub {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--ink-dim);
-  max-width: 560px;
-  margin-bottom: 8px;
 }
 
 .rollList {

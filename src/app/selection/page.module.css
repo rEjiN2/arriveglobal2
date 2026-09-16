@@ -393,6 +393,155 @@
   opacity: 0.85;
 }
 
+/* ─── Group & Event Fleet — rolling reveal list ── */
+.groupFleetSection {
+  padding: 40px 0 100px;
+}
+
+.rollList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.rollRow {
+  position: relative;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.rollWrap {
+  position: relative;
+  overflow: hidden;
+  height: clamp(34px, 5vw, 56px);
+}
+
+.rollInner {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.rollRow:hover .rollInner {
+  transform: translateY(-50%);
+}
+
+.rollLine {
+  height: clamp(34px, 5vw, 56px);
+  display: flex;
+  align-items: center;
+}
+
+.rollTitle {
+  font-family: var(--font-space), sans-serif;
+  font-weight: 800;
+  font-size: clamp(19px, 3.6vw, 42px);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.rollTitleHover {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.rollCategory {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  transition: opacity 0.3s;
+}
+
+.rollHeadline {
+  margin-top: 12px;
+  font-size: 15px;
+  color: var(--ink-dim);
+  max-width: 540px;
+}
+
+/* Hover reveal — image + details */
+.rollReveal {
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 420px;
+  max-width: 90vw;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  transform: translateY(-50%) translateX(16px) scale(0.95) rotate(2deg);
+  opacity: 0;
+  transition: all 0.4s ease-out;
+}
+
+.rollRow:hover .rollReveal {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(-50%) translateX(0) scale(1) rotate(0deg);
+}
+
+.rollRevealImg {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rollRevealPic {
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: filter 0.4s ease-out;
+}
+
+.rollRow:hover .rollRevealPic {
+  filter: grayscale(0);
+}
+
+.rollRevealTint {
+  position: absolute;
+  inset: 0;
+  background: rgba(201, 162, 39, 0.15);
+  mix-blend-mode: overlay;
+}
+
+.rollRevealText {
+  min-width: 0;
+}
+
+.rollRevealHeadline {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.rollRevealCta {
+  font-family: var(--font-mono), monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 /* ─── CTA ─────────────────────────────────────── */
 .cta {
   padding: 96px 0;
@@ -469,6 +618,39 @@
     flex: 0 1 calc(50% - 11px);
   }
 
+  .rollCategory {
+    display: none;
+  }
+
+  .rollTitle {
+    font-size: clamp(14px, 5vw, 20px);
+  }
+
+  .rollReveal,
+  .rollRow:hover .rollReveal {
+    pointer-events: auto;
+    position: static;
+    opacity: 1;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    margin-top: 18px;
+    box-shadow: none;
+  }
+
+  .rollRevealHeadline {
+    display: none;
+  }
+
+  .rollRevealText {
+    display: flex;
+    align-items: center;
+  }
+
+  .rollRow:hover .rollInner {
+    transform: none;
+  }
+
   .ctaInner { flex-direction: column; align-items: flex-start; }
 }
 
@@ -489,5 +671,10 @@
 }
 
 @media (max-width: 560px) {
+  .rollRevealImg {
+    width: 76px;
+    height: 76px;
+  }
+
   .ctaActions { flex-direction: column; width: 100%; }
 }

@@ -4,30 +4,6 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import styles from './page.module.css'
 
-const FLEET_EXTRAS = [
-  {
-    id: 'luxury-vans',
-    tag: 'Luxury Vans',
-    category: 'Executive Van · VIP Sprinter',
-    headline: 'Boardroom-grade interiors for VVIP groups and roadshow travel.',
-    image: '/fleet/luxury-mini-van.png',
-  },
-  {
-    id: 'mini-buses',
-    tag: 'Mini Buses',
-    category: '14-Seater · 22-Seater',
-    headline: 'Comfortable group mobility for delegations, crews, and events.',
-    image: '/fleet/mini-coach.png',
-  },
-  {
-    id: 'coaches',
-    tag: 'Coaches',
-    category: 'Standard Coach · Luxury Motor Coach',
-    headline: 'Full-size coaches for conferences, large events, and group logistics.',
-    image: '/fleet/luxury-coach.png',
-  },
-]
-
 export const metadata: Metadata = {
   title: 'Services',
   description:
@@ -196,51 +172,6 @@ export default function ServicesPage() {
                   <div className={styles.rollRevealText}>
                     <p className={styles.rollRevealHeadline}>{s.headline}</p>
                     <p className={styles.rollRevealExcerpt}>{s.description[0]}</p>
-                    <Link href="/contact" className={styles.rollRevealCta}>
-                      Get a quote →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Group & Event Fleet — extra services ── */}
-      <section className={`${styles.rollSection} ${styles.fleetSection}`}>
-        <div className="wrap">
-          <p className={styles.rollKicker}>The fleet</p>
-          <h2 className={styles.fleetHeading}>Group &amp; Event Fleet</h2>
-          <p className={styles.fleetSub}>
-            From boardroom-grade vans to full-size coaches, built for delegations, crews, and
-            large-scale events.
-          </p>
-
-          <div className={styles.rollList}>
-            {FLEET_EXTRAS.map((f) => (
-              <div key={f.id} id={f.id} className={styles.rollRow}>
-                <div className={styles.rollWrap}>
-                  <div className={styles.rollInner}>
-                    <div className={styles.rollLine}>
-                      <h2 className={styles.rollTitle}>{f.tag}</h2>
-                    </div>
-                    <div className={styles.rollLine}>
-                      <h2 className={`${styles.rollTitle} ${styles.rollTitleHover}`}>{f.tag}</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <span className={styles.rollCategory}>{f.category}</span>
-                <p className={styles.rollHeadline}>{f.headline}</p>
-
-                <div className={styles.rollReveal}>
-                  <div className={styles.rollRevealImg}>
-                    <Image src={f.image} alt={f.tag} fill className={styles.rollRevealPic} sizes="140px" />
-                    <div className={styles.rollRevealTint} />
-                  </div>
-                  <div className={styles.rollRevealText}>
-                    <p className={styles.rollRevealHeadline}>{f.headline}</p>
                     <Link href="/contact" className={styles.rollRevealCta}>
                       Get a quote →
                     </Link>
