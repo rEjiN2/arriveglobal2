@@ -1,7 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import Script from 'next/script'
 import styles from './ContactForm.module.css'
+import type { ApiResponse } from '@/lib/types'
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      getResponse: (widgetId?: number) => string
+      reset: (widgetId?: number) => void
+    }
+  }
+}
 
 type FieldType = 'text' | 'email' | 'number' | 'date' | 'select'
 
@@ -147,11 +158,15 @@ type ServiceValue = (typeof SERVICES)[number] | ''
 
 const EMPTY_FIELDS: Record<string, string> = {}
 
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''
+
 export function ContactForm() {
   const [state, setState] = useState<FormState>('idle')
   const [service, setService] = useState<ServiceValue>(SERVICES[0])
   const [fields, setFields] = useState<Record<string, string>>(EMPTY_FIELDS)
   const [message, setMessage] = useState('')
+  const [error, setError] = useState('')
+  const recaptchaRef = useRef<HTMLDivElement>(null)
 
   function handleServiceChange(e: React.ChangeEvent<HTMLSelectElement>) {
     setService(e.target.value as ServiceValue)
@@ -162,10 +177,37 @@ export function ContactForm() {
     setFields((prev) => ({ ...prev, [name]: value }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    setError('')
+
+    const recaptchaToken = window.grecaptcha?.getResponse() ?? ''
+    if (!recaptchaToken) {
+      setError('Please complete the reCAPTCHA verification.')
+      return
+    }
+
     setState('submitting')
-    setTimeout(() => setState('success'), 1200)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ service, fields, message, recaptchaToken }),
+      })
+
+      const data: ApiResponse = await res.json()
+
+      if (!data.success) {
+        throw new Error(data.error ?? 'Something went wrong.')
+      }
+
+      setState('success')
+    } catch (err) {
+      window.grecaptcha?.reset()
+      setError(err instanceof Error ? err.message : 'Please try again.')
+      setState('idle')
+    }
   }
 
   function resetForm() {
@@ -173,6 +215,7 @@ export function ContactForm() {
     setService(SERVICES[0])
     setFields(EMPTY_FIELDS)
     setMessage('')
+    setError('')
   }
 
   if (state === 'success') {
@@ -265,6 +308,15 @@ export function ContactForm() {
           />
         </div>
       )}
+
+      {service && RECAPTCHA_SITE_KEY && (
+        <div className={styles.fieldFull}>
+          <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
+          <div ref={recaptchaRef} className="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY} />
+        </div>
+      )}
+
+      {error && <p className={styles.error}>{error}</p>}
 
       <button
         type="submit"

@@ -36,6 +36,13 @@ export interface NewsletterPayload {
   email: string
 }
 
+export interface ContactPayload {
+  service: string
+  fields: Record<string, string>
+  message?: string
+  recaptchaToken: string
+}
+
 export interface ApiResponse<T = unknown> {
   success: boolean
   data?: T
