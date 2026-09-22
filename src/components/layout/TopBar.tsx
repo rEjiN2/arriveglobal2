@@ -5,7 +5,7 @@ import styles from './TopBar.module.css'
 const SOCIAL_LINKS = [
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61594081861634', Icon: IconBrandFacebook },
   { label: 'Instagram', href: 'https://www.instagram.com/arrivesglobal/', Icon: IconBrandInstagram },
-  { label: 'WhatsApp', href: 'https://wa.me/18000000000', Icon: IconBrandWhatsapp },
+  { label: 'WhatsApp', href: 'https://wa.me/971502550577', Icon: IconBrandWhatsapp },
 ]
 
 export function TopBar() {
@@ -32,9 +32,9 @@ export function TopBar() {
           <ChevronDown size={13} strokeWidth={2.25} />
         </button>
 
-        <a href="tel:+18000000000" className={styles.link} aria-label="Call +1 (800) 000-0000">
+        <a href="tel:+971502550577" className={styles.link} aria-label="Call +971 50 255 0577">
           <Phone size={13} strokeWidth={2.25} />
-          <span className={styles.linkText}>+1 (800) 000-0000</span>
+          <span className={styles.linkText}>+971 50 255 0577</span>
         </a>
 
         <a

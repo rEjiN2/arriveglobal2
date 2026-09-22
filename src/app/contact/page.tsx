@@ -16,9 +16,9 @@ const CHANNELS = [
   },
   {
     label: 'WhatsApp',
-    value: '+1 (800) 000-0000',
+    value: '+971 50 255 0577',
     note: 'Fastest response, live dispatch',
-    href: 'https://wa.me/18000000000',
+    href: 'https://wa.me/971502550577',
   },
   {
     label: 'Dispatch hours',

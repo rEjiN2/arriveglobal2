@@ -30,19 +30,31 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
     const body: ContactPayload = await req.json()
     const { service, fields, message, recaptchaToken } = body
 
-    if (!service || !fields || !recaptchaToken) {
+    if (!service || !fields) {
       return NextResponse.json(
         { success: false, error: 'Missing required fields.' },
         { status: 400 },
       )
     }
 
-    const recaptchaOk = await verifyRecaptcha(recaptchaToken)
-    if (!recaptchaOk) {
-      return NextResponse.json(
-        { success: false, error: 'reCAPTCHA verification failed.' },
-        { status: 400 },
-      )
+    const recaptchaConfigured = !!process.env.RECAPTCHA_SECRET_KEY
+    const skipRecaptcha = !recaptchaConfigured && process.env.NODE_ENV !== 'production'
+
+    if (!skipRecaptcha) {
+      if (!recaptchaToken) {
+        return NextResponse.json(
+          { success: false, error: 'Missing required fields.' },
+          { status: 400 },
+        )
+      }
+
+      const recaptchaOk = await verifyRecaptcha(recaptchaToken)
+      if (!recaptchaOk) {
+        return NextResponse.json(
+          { success: false, error: 'reCAPTCHA verification failed.' },
+          { status: 400 },
+        )
+      }
     }
 
     const toEmail = process.env.CONTACT_TO_EMAIL

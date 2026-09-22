@@ -182,7 +182,7 @@ export function ContactForm() {
     setError('')
 
     const recaptchaToken = window.grecaptcha?.getResponse() ?? ''
-    if (!recaptchaToken) {
+    if (RECAPTCHA_SITE_KEY && !recaptchaToken) {
       setError('Please complete the reCAPTCHA verification.')
       return
     }
